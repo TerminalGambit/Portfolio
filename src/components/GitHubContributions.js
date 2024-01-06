@@ -23,14 +23,14 @@ const GitHubContributions = () => {
   return (
     <div>
       <h2>My GitHub Contributions</h2>
-      {contributions.map((repo, index) => (
+      {Array.isArray(contributions) && contributions.map((repo, index) => (
         <div key={index}>
           <h3>{repo.name}</h3>
           <p>{repo.description}</p>
         </div>
       ))}
     </div>
-  );
+  );  
 };
 
 export default GitHubContributions;
