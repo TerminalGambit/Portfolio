@@ -7,14 +7,18 @@ const GitHubContributions = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('https://api.github.com/repos/TerminalGambit', {
-        headers: {
-            Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`
-        }
-      });
+      try {
+        const response = await fetch('https://api.github.com/users/TerminalGambit/repos', {
+          headers: {
+            Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}` // Replace with your GitHub token
+          }
+        });
 
-      const data = await response.json();
-      setContributions(data);
+        const data = await response.json();
+        setContributions(data);
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+      }
     };
 
     fetchData();
@@ -23,14 +27,15 @@ const GitHubContributions = () => {
   return (
     <div>
       <h2>My GitHub Contributions</h2>
-      {Array.isArray(contributions) && contributions.map((repo, index) => (
-        <div key={index}>
+      {contributions.map((repo) => (
+        <div key={repo.id}>
           <h3>{repo.name}</h3>
-          <p>{repo.description}</p>
+          <p>{repo.description || 'No description available'}</p>
+          <a href={repo.html_url} target="_blank" rel="noopener noreferrer">View Repository</a>
         </div>
       ))}
     </div>
-  );  
+  );
 };
 
 export default GitHubContributions;
