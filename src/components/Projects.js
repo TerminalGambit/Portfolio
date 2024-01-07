@@ -29,7 +29,7 @@ const Projects = () => {
                 <p>
                     This project is a Poker AI developed by TerminalGambit.
                     You can find the code on GitHub:
-                    <a href="https://github.com/TerminalGambit/PokerAI">
+                    <a href="https://github.com/TerminalGambit/PokeGameAI">
                         Poker AI GitHub
                     </a>
                 </p>
