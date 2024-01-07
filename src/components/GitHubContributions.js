@@ -7,19 +7,24 @@ const GitHubContributions = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const response = await fetch('https://api.github.com/users/TerminalGambit/repos', {
-          headers: {
-            Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}` // Replace with your GitHub token
+        try {
+          const response = await fetch('https://api.github.com/users/TerminalGambit/repos', {
+            headers: {
+              Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}` // Replace with your GitHub token
+            }
+          });
+      
+          if (!response.ok) {
+            throw new Error(`Error: ${response.status}`);
           }
-        });
-
-        const data = await response.json();
-        setContributions(data);
-      } catch (error) {
-        console.error("Error fetching data: ", error);
-      }
-    };
+      
+          const data = await response.json();
+          setContributions(data);
+        } catch (error) {
+          console.error("Error fetching data: ", error);
+        }
+      };
+      
 
     fetchData();
   }, []);
