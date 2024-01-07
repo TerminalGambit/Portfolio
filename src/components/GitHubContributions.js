@@ -10,7 +10,7 @@ const GitHubContributions = () => {
         try {
           const response = await fetch('https://api.github.com/users/TerminalGambit/repos', {
             headers: {
-              Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}` // Replace with your GitHub token
+              Authorization: `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` // Replace with your GitHub token
             }
           });
       
