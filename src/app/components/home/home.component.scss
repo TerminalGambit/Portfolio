@@ -1,0 +1,42 @@
+.hero-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.hero-card {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 48px;
+  border-radius: 16px;
+  color: white;
+  max-width: 800px;
+  width: 100%;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-description {
+  margin: 24px 0;
+  color: #dddddd;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

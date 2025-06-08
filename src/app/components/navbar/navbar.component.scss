@@ -1,0 +1,36 @@
+.navbar {
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #fdfdfd;
+    }
+  }
+}
+
+mat-toolbar {
+  background: rgb(0, 38, 29) !important;
+  color: #fff !important;
+}
+
+mat-toolbar .mat-button, mat-toolbar .mat-button span {
+  color: #fff !important;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
