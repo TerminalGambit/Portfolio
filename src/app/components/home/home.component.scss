@@ -107,6 +107,14 @@ h1 {
   color: var(--bg-primary);
 }
 
+.hero-profile-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .hero-stats {
   display: flex;
   flex-direction: column;
