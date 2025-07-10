@@ -191,6 +191,62 @@
       transform: translateY(-2px);
     }
   }
+  
+  .tech-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--bg-overlay);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-secondary);
+    margin-bottom: var(--spacing-xs);
+    transition: var(--transition);
+    
+    &:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-light);
+    }
+    
+    .tech-icon {
+      font-size: 1.5rem;
+      min-width: 24px;
+    }
+    
+    .tech-name {
+      flex: 1;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    
+    .tech-level {
+      font-size: 0.75rem;
+      padding: 2px 6px;
+      border-radius: var(--border-radius-small);
+      font-weight: 500;
+      
+      &.level-advanced {
+        background: var(--status-success);
+        color: var(--bg-primary);
+      }
+      
+      &.level-intermediate {
+        background: var(--status-warning);
+        color: var(--bg-primary);
+      }
+      
+      &.level-beginner {
+        background: var(--status-info);
+        color: var(--bg-primary);
+      }
+      
+      &.level-expert {
+        background: var(--accent-bright);
+        color: var(--bg-primary);
+      }
+    }
+  }
 }
 
 .certifications-section {

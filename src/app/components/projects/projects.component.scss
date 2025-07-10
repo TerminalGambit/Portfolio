@@ -116,6 +116,43 @@
       }
 
       .tech-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-xs);
+        
+        .project-tech-item {
+          display: flex;
+          align-items: center;
+          gap: var(--spacing-xs);
+          padding: var(--spacing-xs) var(--spacing-sm);
+          background: rgba(0, 255, 136, 0.15);
+          border-radius: var(--border-radius);
+          border: 1px solid rgba(0, 255, 136, 0.3);
+          transition: var(--transition);
+          
+          &:hover {
+            background: rgba(0, 255, 136, 0.25);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-light);
+          }
+          
+          .project-tech-icon {
+            font-size: 1.2rem;
+            min-width: 16px;
+          }
+          
+          .project-tech-name {
+            font-weight: 500;
+            color: var(--accent-bright);
+            font-size: 0.875rem;
+            
+            &.primary-tech {
+              font-weight: 600;
+              color: var(--text-primary);
+            }
+          }
+        }
+        
         mat-chip {
           background-color: rgba(0, 255, 136, 0.15);
           color: var(--accent-bright);

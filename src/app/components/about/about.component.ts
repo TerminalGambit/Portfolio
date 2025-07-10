@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { TechnologyService } from '../../services/technology.service';
+import { Technology, TechnologyCategory } from '../../interfaces/technology.interface';
 
 @Component({
   selector: 'app-about',
@@ -11,14 +13,20 @@ import { CommonModule } from '@angular/common';
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
-export class AboutComponent {
-  skills = {
-    languages: ['Python', 'Java', 'C', 'OCaml', 'TypeScript', 'JavaScript'],
-    aiMl: ['Pandas', 'Scikit-learn', 'TensorFlow', 'PyTorch', 'Hugging Face'],
-    webDatabases: ['Angular', 'Symfony', 'MySQL', 'PostgreSQL', 'REST APIs'],
-    devOps: ['Docker', 'Kubernetes', 'Git', 'CI/CD', 'Unix/Linux'],
-    tools: ['Git', 'GitHub', 'Agile', 'UML', 'LaTeX']
-  };
+export class AboutComponent implements OnInit {
+  technologies: Technology[] = [];
+  categories: TechnologyCategory[] = [];
+  
+  constructor(private technologyService: TechnologyService) {}
+  
+  ngOnInit() {
+    this.technologies = this.technologyService.getTechnologies();
+    this.categories = this.technologyService.getCategories();
+  }
+  
+  getTechnologiesByCategory(categoryName: string): Technology[] {
+    return this.technologyService.getTechnologiesByCategory(categoryName);
+  }
 
   experiences = [
     {

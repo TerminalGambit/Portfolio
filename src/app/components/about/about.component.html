@@ -101,58 +101,20 @@
     <div class="skills-section">
       <h2 class="mat-headline">Technical Skills</h2>
       <div class="skills-grid">
-        <mat-card class="skill-category">
+        <mat-card class="skill-category" *ngFor="let category of categories">
           <mat-card-header>
             <mat-card-title>
-              <mat-icon>code</mat-icon>
-              Programming Languages
+              <mat-icon>{{ category.icon }}</mat-icon>
+              {{ category.name }}
             </mat-card-title>
           </mat-card-header>
           <mat-card-content>
             <div class="skill-chips">
-              <span class="skill-chip" *ngFor="let skill of skills.languages">{{ skill }}</span>
-            </div>
-          </mat-card-content>
-        </mat-card>
-
-        <mat-card class="skill-category">
-          <mat-card-header>
-            <mat-card-title>
-              <mat-icon>psychology</mat-icon>
-              AI & Machine Learning
-            </mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <div class="skill-chips">
-              <span class="skill-chip" *ngFor="let skill of skills.aiMl">{{ skill }}</span>
-            </div>
-          </mat-card-content>
-        </mat-card>
-
-        <mat-card class="skill-category">
-          <mat-card-header>
-            <mat-card-title>
-              <mat-icon>web</mat-icon>
-              Web & Databases
-            </mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <div class="skill-chips">
-              <span class="skill-chip" *ngFor="let skill of skills.webDatabases">{{ skill }}</span>
-            </div>
-          </mat-card-content>
-        </mat-card>
-
-        <mat-card class="skill-category">
-          <mat-card-header>
-            <mat-card-title>
-              <mat-icon>build</mat-icon>
-              DevOps & Tools
-            </mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <div class="skill-chips">
-              <span class="skill-chip" *ngFor="let skill of skills.devOps">{{ skill }}</span>
+              <div class="tech-item" *ngFor="let tech of getTechnologiesByCategory(category.name)">
+                <i [class]="tech.icon" class="tech-icon"></i>
+                <span class="tech-name">{{ tech.name }}</span>
+                <span class="tech-level" [class]="'level-' + tech.level.toLowerCase()">{{ tech.level }}</span>
+              </div>
             </div>
           </mat-card-content>
         </mat-card>

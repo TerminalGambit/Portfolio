@@ -4,6 +4,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { CommonModule } from '@angular/common';
+import { TechnologyService } from '../../services/technology.service';
+import { ProjectTechnology } from '../../interfaces/technology.interface';
 
 @Component({
   selector: 'app-projects',
@@ -13,6 +15,13 @@ import { CommonModule } from '@angular/common';
   styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent {
+  
+  constructor(private technologyService: TechnologyService) {}
+  
+  getProjectTechnologies(technologies: string[]): ProjectTechnology[] {
+    return this.technologyService.getProjectTechnologies(technologies);
+  }
+  
   projects = [
     {
       title: 'AI Portfolio Website',
