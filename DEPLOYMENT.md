@@ -60,8 +60,10 @@ This command will:
 
 Your portfolio will be available at:
 ```
-https://YOUR_USERNAME.github.io/portfolio/
+https://YOUR_USERNAME.github.io/Portfolio/
 ```
+
+**Note**: GitHub repository names are case-sensitive for GitHub Pages URLs.
 
 It may take a few minutes for the deployment to complete and the site to be accessible.
 

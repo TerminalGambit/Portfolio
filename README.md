@@ -76,6 +76,8 @@ The portfolio is configured for easy deployment to GitHub Pages. See [DEPLOYMENT
 2. Push your code: `git remote add origin <repo-url> && git push -u origin main`
 3. Deploy: `npm run deploy`
 
+Your portfolio will be live at: `https://terminalgambit.github.io/Portfolio/`
+
 ## 🎯 Features Breakdown
 
 ### Home Section
