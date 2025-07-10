@@ -1,0 +1,86 @@
+1|\documentclass[a4paper,10pt]{article}
+2|\usepackage[left=1.5cm, right=1.5cm, top=1.5cm, bottom=1.5cm]{geometry}
+3|\usepackage{titlesec, enumitem, hyperref, fontawesome5}
+4|\usepackage{titlesec}
+5|\titlespacing*{\section}{0pt}{0.5em}{0.5em}
+6|\setlist[itemize]{noitemsep, topsep=0pt}
+7|
+8|\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+9|\renewcommand{\baselinestretch}{0.95} % Adjust line spacing to fit content
+10|
+11|\begin{document}
+12|
+13|\pagestyle{empty}
+14|
+15|\begin{center}
+16|    {\Huge \textbf{Jack Massey}}\\
+17|    \vspace{2pt}
+18|    \textbf{Etudiant en Informatique | IA et Data Science}\\
+19|    \vspace{5pt}
+20|    \faEnvelope \hspace{2pt} \href{mailto:jackmassey.monaco@outlook.com}{jackmassey.monaco@outlook.com} \quad
+21|    \faPhone \hspace{2pt} +33 6 40 61 37 35 \quad
+22|    \faLinkedin \hspace{2pt} \href{https://www.linkedin.com/in/masseyjack/}{Linkedin.com} \quad
+23|    \faGithub \hspace{2pt} \href{https://github.com/TerminalGambit/}{GitHub.com}
+24|\end{center}
+25|
+26|\section*{Éducation}
+27|\textbf{Université Côte d'Azur} -- Licence en Informatique \hfill \textit{En cours}\\
+28|\textit{Cours pertinents :} Apprentissage Automatique, Algorithmes, IA, Science des Données\\
+29|\textbf{Lycée Albert Ier} Baccalauréat français avec \textit{Mention Très Bien} \hfill \textit{2022}
+30|\begin{itemize}
+31|	\item Informatique (19/20), Mathématiques (18/20) et Physique
+32|	\item Options Latin et Mathématiques Expertes
+33|\end{itemize}
+34|
+35|\section*{Compétences Techniques}
+36|\begin{itemize}
+37|    \item \textbf{Langages} : Python (Maîtrise), Java, C, OCaml
+38|    \item \textbf{IA/ML} : Pandas, Scikit-learn, TensorFlow, PyTorch, Hugging Face (NLP)
+39|    \item \textbf{Bases de Données/Web} : MySQL, PostgreSQL, Développement Web
+40|    \item \textbf{Systèmes/Outils} : Unix, zsh, Git, GitHub, GitFlow, Agile
+41|    \item \textbf{DevOps} : Docker, Kubernetes, Tests, CI/CD
+42|\end{itemize}
+43|
+44|\section*{Expérience et Projet}
+45|\textbf{i3S Research Laboratory, Sophia Antipolis} \hfill \textit{Stagiaire d'été, 2024}\\
+46|\textbf{Technologies :} Programmation par Contraintes, NLP, Beam Search, Divergence KL, Spécialisation\\
+47|• Intégration de la Programmation par Contraintes et du NLP pour résoudre des problématiques concrètes\\
+48|• Travail sur l’optimisation des processus de recherche en NLP\\
+49|• Application de la Divergence KL et de la Perplexité pour évaluer les modèles de langage\\
+50|• Reproduction des résultats de Yao et al., ICLR 2024, intégrés au CP 2024\\
+51|• Lecture et analyse de publications scientifiques pour approfondir la compréhension\\
+52|\textbf{Article de Recherche :} \href{https://arxiv.org/pdf/2407.13490}{arxiv.org/pdf/2407.13490}\\
+53|\textbf{Travailleur Indépendant, Monaco} \hfill \textit{Tuteur Privé, 2022-Présent}\\
+54|• Plans personnalisés en informatique, mathématiques, physique et échecs\\
+55|• Aide à l’amélioration des compétences en résolution de problèmes et aux performances académiques\\
+56|\textbf{Application Web – Gestion de Courses \6 Recettes} \hfill 2025 \\
+57|\textit{Angular, Symfony, PostgreSQL, API OpenFoodFacts, Docker, Raspberry Pi, Nginx} \\
+58|App full-stack en équipe (Agile). Intégration API recettes, gestion de groupes utilisateurs. Déploiement sur Raspberry Pi avec Docker et reverse proxy via Nginx.\\
+59|\textbf{Finance Utility – Analyse Modulaire de Marché} \hfill En cours \\
+60|\textit{Python, Pandas, Yahoo Finance API, matplotlib/seaborn, modularité} \\
+61|Projet personnel en cours de développement permettant d’analyser les tendances boursières (RSI, MACD, MA, Bollinger Bands). Utilisé pour renforcer mes compétences en traitement de données et finance appliquée. \href{https://github.com/TerminalGambit/PersonalStockTrackerAnalyser}{GitHub} \\
+62|\textbf{Solo Chess – Reproduction du Jeu en Java} \hfill 2024 \\
+63|\textit{Java, libGDX, architecture orientée objets, UML} \\
+64|Reproduction fidèle du mode “Solo Chess” de Chess.com avec moteur de règles, logique de placement et interface graphique via libGDX. Utilisation du polymorphisme et d’un moteur de rendu modulaire. \href{https://github.com/TerminalGambit/PCOO-projetfinal}{GitHub}\\
+65|\textbf{Serveur Multi-Clients – Communication Réseau} \hfill 2023 \\
+66|\textit{Python, sockets, threading, signal handling} \\
+67|Conception d’un système client-serveur multiclients en Python avec gestion concurrente par threads, envoi de signaux et handlers personnalisés. Projet en équipe de trois.\\
+68|\textbf{Jeu en C – Interface Terminal} \hfill 2023 \\
+69|\textit{C, gestion mémoire, logique de jeu, interface CLI} \\
+70|Développement d’un jeu textuel interactif en C avec interface en ligne de commande, travail bas niveau sur la mémoire, accès direct, et structures de contrôle. Renforcement de la compréhension du modèle mémoire de bas niveau.
+71|
+72|\section*{Certifications}
+73|\begin{itemize}
+74|    \item \textbf{Cambridge C1 English Advanced Certificate} (2021) - Maîtrise Professionnelle
+75|\end{itemize}
+76|
+77|\section*{Leadership et Service}
+78|\textbf{Délégué de Classe} \hfill \textit{2018-2022}\\
+79|• Représentation des préoccupations des élèves, facilitation de la communication avec l’administration\\
+80|\textbf{Membre du Conseil d’Établissement} \hfill \textit{2021-2022}\\
+81|• Participation à l’élaboration de politiques et au processus de prise de décision\\
+82|\textbf{Journée Internationale de la Fille} \hfill \textit{Bénévole, 2022}\\
+83|• Contribution à l’organisation d’événements visant à sensibiliser sur les droits des filles et les défis mondiaux\\
+84|\textbf{Simulation des Nations Unies, Nice} \hfill \textit{Délégué Ambassadeur, 2018}\\
+85|• Collaboration avec des délégués internationaux pour rédiger et adopter une résolution sur les inégalités économiques
+86|\end{document}
