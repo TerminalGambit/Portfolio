@@ -16,7 +16,8 @@
   
   &:hover {
     border-color: var(--border-accent);
-    box-shadow: var(--shadow-glow);
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-1px);
   }
   
   .profile-section {

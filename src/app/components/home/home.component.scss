@@ -20,10 +20,13 @@
   color: var(--text-primary);
   max-width: 1000px;
   width: 100%;
-  box-shadow: var(--shadow-heavy);
+  box-shadow: var(--shadow-subtle);
+  animation: fadeInUp 0.8s ease-out;
   
   &:hover {
     border-color: var(--border-accent);
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px) scale(1.005);
   }
 }
 
@@ -45,14 +48,16 @@
   max-width: 60%;
   text-align: left;
   
-h1 {
+  h1 {
     margin-bottom: var(--spacing-sm);
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 700;
     background: linear-gradient(135deg, var(--accent-bright), var(--accent-blue), var(--accent-cyan));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
   }
   
   @media (max-width: 768px) {

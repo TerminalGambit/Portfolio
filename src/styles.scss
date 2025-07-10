@@ -9,11 +9,16 @@
   --bg-tertiary: #1A2B20;          // Card/component background
   --bg-overlay: rgba(10, 15, 12, 0.9); // Overlay background
   
-  // Accent Colors
-  --accent-bright: #00FF88;        // Bright green accent
+  // Accent Colors - Enhanced hierarchy
+  --accent-bright: #00FF88;        // Bright green accent (CTAs only)
   --accent-primary: #00CC6A;       // Primary bright green
   --accent-secondary: #33FF99;     // Secondary bright green
   --accent-hover: #00B85C;         // Hover state for accents
+  
+  // Muted variants for better hierarchy
+  --accent-muted: #88ffcc;         // Softer green for secondary elements
+  --accent-subtle: #66ffaa;        // Even softer for borders/backgrounds
+  --accent-tint: rgba(0, 255, 136, 0.1);  // Very light for overlays
   
   // Blue Accent Colors
   --accent-blue: #00AAFF;          // Bright blue accent
@@ -39,16 +44,18 @@
   --text-tertiary: #8BA99A;        // Tertiary text (muted green)
   --text-accent: #00FF88;          // Accent text
   
-  // Border Colors
+  // Border Colors - Refined hierarchy
   --border-primary: #2A4A35;       // Primary borders
   --border-secondary: #1A2B20;     // Secondary borders
-  --border-accent: #00FF88;        // Accent borders
+  --border-accent: var(--accent-muted);        // Softer accent borders
+  --border-subtle: var(--accent-subtle);       // Very subtle borders
   
-  // Shadow Colors
-  --shadow-light: 0 2px 10px rgba(0, 255, 136, 0.1);
-  --shadow-medium: 0 4px 20px rgba(0, 255, 136, 0.15);
-  --shadow-heavy: 0 8px 30px rgba(0, 255, 136, 0.2);
-  --shadow-glow: 0 0 20px rgba(0, 255, 136, 0.3);
+  // Shadow Colors - More refined
+  --shadow-light: 0 2px 10px rgba(0, 255, 136, 0.05);
+  --shadow-medium: 0 4px 20px rgba(0, 255, 136, 0.1);
+  --shadow-heavy: 0 8px 30px rgba(0, 255, 136, 0.15);
+  --shadow-glow: 0 0 20px rgba(0, 255, 136, 0.2);
+  --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.1);
   
   // Layout & Spacing
   --border-radius: 12px;
