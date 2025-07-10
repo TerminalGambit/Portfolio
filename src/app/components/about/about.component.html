@@ -1,0 +1,175 @@
+<section class="about-container mat-typography">
+  <div class="about-content">
+    <div class="about-intro">
+      <h1 class="mat-display-1">About Me</h1>
+      <p class="mat-body-1 intro-text">
+        I'm a computer science student at Université Côte d'Azur, passionate about AI-driven systems and their applications in finance. 
+        My journey began with a deep fascination for intelligent agents and machine learning, leading me to explore the intersection of 
+        technology and real-world problem-solving.
+      </p>
+      <div class="personal-quote">
+        <mat-icon class="quote-icon">format_quote</mat-icon>
+        <p class="mat-body-1">
+          "I believe in building systems that don't just compute, but reason, adapt, and make meaningful decisions."
+        </p>
+      </div>
+    </div>
+
+    <div class="education-section">
+      <h2 class="mat-headline">Education</h2>
+      <mat-card class="education-card">
+        <mat-card-header>
+          <mat-card-title>Université Côte d'Azur</mat-card-title>
+          <mat-card-subtitle>Licence en Informatique • Currently enrolled</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p><strong>Relevant Coursework:</strong> Machine Learning, Algorithms, AI, Data Science</p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="education-card">
+        <mat-card-header>
+          <mat-card-title>Lycée Albert Ier</mat-card-title>
+          <mat-card-subtitle>Baccalauréat français avec Mention Très Bien • 2022</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p><strong>Notable Grades:</strong> Computer Science (19/20), Mathematics (18/20), Physics</p>
+          <p><strong>Options:</strong> Latin and Expert Mathematics</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="experience-section">
+      <h2 class="mat-headline">Experience</h2>
+      <mat-card class="experience-card" *ngFor="let exp of experiences">
+        <mat-card-header>
+          <mat-card-title>{{ exp.title }}</mat-card-title>
+          <mat-card-subtitle>{{ exp.company }} • {{ exp.location }} • {{ exp.period }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="mat-body-1">{{ exp.description }}</p>
+          <div class="technologies">
+            <span class="tech-chip" *ngFor="let tech of exp.technologies">{{ tech }}</span>
+          </div>
+          <div class="publication-link" *ngIf="exp.publication">
+            <a [href]="exp.publication" target="_blank" mat-button color="primary">
+              <mat-icon>article</mat-icon>
+              Research Publication
+            </a>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="skills-section">
+      <h2 class="mat-headline">Technical Skills</h2>
+      <div class="skills-grid">
+        <mat-card class="skill-category">
+          <mat-card-header>
+            <mat-card-title>
+              <mat-icon>code</mat-icon>
+              Programming Languages
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="skill-chips">
+              <span class="skill-chip" *ngFor="let skill of skills.languages">{{ skill }}</span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="skill-category">
+          <mat-card-header>
+            <mat-card-title>
+              <mat-icon>psychology</mat-icon>
+              AI & Machine Learning
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="skill-chips">
+              <span class="skill-chip" *ngFor="let skill of skills.aiMl">{{ skill }}</span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="skill-category">
+          <mat-card-header>
+            <mat-card-title>
+              <mat-icon>web</mat-icon>
+              Web & Databases
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="skill-chips">
+              <span class="skill-chip" *ngFor="let skill of skills.webDatabases">{{ skill }}</span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="skill-category">
+          <mat-card-header>
+            <mat-card-title>
+              <mat-icon>build</mat-icon>
+              DevOps & Tools
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="skill-chips">
+              <span class="skill-chip" *ngFor="let skill of skills.devOps">{{ skill }}</span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+    <div class="certifications-section">
+      <h2 class="mat-headline">Certifications & Achievements</h2>
+      <mat-card class="certification-card">
+        <mat-card-content>
+          <div class="certification-item">
+            <mat-icon class="cert-icon">verified</mat-icon>
+            <div>
+              <h3>Cambridge C1 English Advanced Certificate</h3>
+              <p class="mat-body-2">Professional proficiency level • 2021</p>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="leadership-section">
+      <h2 class="mat-headline">Leadership & Service</h2>
+      <div class="leadership-grid">
+        <mat-card class="leadership-card">
+          <mat-card-header>
+            <mat-card-title>Class Representative</mat-card-title>
+            <mat-card-subtitle>2018-2022</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            Represented student concerns and facilitated communication with administration
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="leadership-card">
+          <mat-card-header>
+            <mat-card-title>School Council Member</mat-card-title>
+            <mat-card-subtitle>2021-2022</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            Participated in policy development and decision-making processes
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="leadership-card">
+          <mat-card-header>
+            <mat-card-title>UN Simulation Delegate</mat-card-title>
+            <mat-card-subtitle>Nice, 2018</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            Collaborated with international delegates on economic inequality resolutions
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>

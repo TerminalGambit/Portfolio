@@ -1,0 +1,79 @@
+<section class="projects-container mat-typography">
+  <div class="projects-content">
+    <h1 class="mat-display-1">My Projects</h1>
+    <p class="mat-body-1 intro-text">
+      A collection of projects that showcase my skills in AI, software development, and applied computer science.
+      Each project represents a step in my journey of learning and building innovative solutions.
+    </p>
+
+    <div class="projects-grid">
+      <mat-card class="project-card" *ngFor="let project of projects">
+        <mat-card-header>
+          <div mat-card-avatar class="project-avatar">
+            <mat-icon>{{ getProjectIcon(project.type) }}</mat-icon>
+          </div>
+          <mat-card-title>{{ project.title }}</mat-card-title>
+          <mat-card-subtitle>{{ project.period }} • {{ project.type }}</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p class="mat-body-1 project-description">{{ project.description }}</p>
+
+          <div class="project-highlights">
+            <h4>Key Features:</h4>
+            <ul>
+              <li *ngFor="let highlight of project.highlights">{{ highlight }}</li>
+            </ul>
+          </div>
+
+          <div class="technologies-section">
+            <h4>Technologies Used:</h4>
+            <div class="tech-chips">
+              <mat-chip-set>
+                <mat-chip *ngFor="let tech of project.technologies">{{ tech }}</mat-chip>
+              </mat-chip-set>
+            </div>
+          </div>
+
+          <div class="status-section">
+            <mat-chip [color]="getStatusColor(project.status)" selected>
+              {{ project.status }}
+            </mat-chip>
+          </div>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button mat-button *ngIf="project.github" 
+                  (click)="openLink(project.github)">
+            <mat-icon>code</mat-icon>
+            View Code
+          </button>
+          <button mat-button color="primary">
+            <mat-icon>info</mat-icon>
+            Learn More
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <div class="additional-projects">
+      <mat-card class="future-projects-card">
+        <mat-card-header>
+          <mat-card-title>What's Next?</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="mat-body-1">
+            I'm currently exploring advanced AI architectures, particularly focusing on multi-agent systems 
+            and their applications in financial modeling. Stay tuned for upcoming projects in:
+          </p>
+          <ul>
+            <li>Reinforcement Learning for Trading Strategies</li>
+            <li>Multi-Agent Financial Simulations</li>
+            <li>Natural Language Processing for Financial Analysis</li>
+            <li>Constraint Programming Optimization Tools</li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</section>

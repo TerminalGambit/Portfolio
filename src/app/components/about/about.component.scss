@@ -1,0 +1,99 @@
+.about-container {
+  padding: 16px 24px;
+  color: #f2f6f7;
+  background-color: var(--dark-green);
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+.about-intro {
+  padding: 40px 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-light);
+  
+  .intro-text {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--warm-gray);
+  }
+
+  .personal-quote {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border-left: 4px solid var(--accent-teal);
+  }
+
+  .quote-icon {
+    margin-right: 8px;
+    color: #00dab8;
+  }
+}
+
+.education-section, .experience-section, .skills-section, .certifications-section, .leadership-section {
+  margin-top: 32px;
+  padding: 32px 16px;
+  border-radius: var(--border-radius-large);
+  background: rgba(15, 41, 34, 0.9);
+  box-shadow: var(--shadow-medium);
+  
+  h2 {
+    text-align: center;
+    color: var(--accent-teal);
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+  
+  .education-card, .experience-card, .skill-category, .certification-card, .leadership-card {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+  }
+    
+  .skill-chips, .technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .skill-chip, .tech-chip {
+    background: var(--accent-teal);
+    color: var(--dark-green);
+    padding: 6px 12px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 20px;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    
+    &:hover {
+      box-shadow: var(--shadow-medium);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.certifications-section {
+  .certification-item {
+    display: flex;
+    align-items: center;
+    .cert-icon {
+      margin-right: 8px;
+      color: gold;
+    }
+  }
+}
+
+.leadership-section {
+  .leadership-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+

@@ -1,7 +1,9 @@
 .navbar {
   padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
+  box-shadow: var(--shadow-light);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
   .nav-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -10,25 +12,47 @@
   }
 
   .nav-link {
-    color: #333;
+    color: var(--warm-gray);
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
-    transition: color 0.3s ease;
-
+    font-family: 'Inter', sans-serif;
+    transition: var(--transition);
+    border-radius: var(--border-radius);
+    padding: 8px 16px;
+    position: relative;
+    
     &:hover {
-      color: #fdfdfd;
+      color: var(--accent-teal);
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateY(-1px);
+    }
+    
+    &.active {
+      color: var(--accent-teal);
+      background-color: rgba(0, 210, 184, 0.1);
     }
   }
 }
 
 mat-toolbar {
-  background: rgb(0, 38, 29) !important;
-  color: #fff !important;
+  background: linear-gradient(90deg, var(--primary-green), var(--dark-green)) !important;
+  color: var(--warm-gray) !important;
+  box-shadow: var(--shadow-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 mat-toolbar .mat-button, mat-toolbar .mat-button span {
-  color: #fff !important;
+  color: var(--warm-gray) !important;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  transition: var(--transition);
+  border-radius: var(--border-radius);
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--accent-teal) !important;
+  }
 }
 
 .spacer {

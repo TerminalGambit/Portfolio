@@ -1,15 +1,51 @@
 <main class="mat-typography hero-container">
   <mat-card class="hero-card mat-elevation-z4">
-    <h1 class="mat-display-1">JACK MASSEY</h1>
-    <h2 class="mat-subheading-2 mat-accent-text">
-      Computer Scientist · Agentic AI & Finance
-    </h2>
-    <p class="mat-body-1 hero-description">
-      Designing intelligent systems that reason, decide, and adapt — with a focus on AI-driven finance.
-    </p>
-    <div class="button-row">
-      <button mat-raised-button color="primary">Explore My Work</button>
-      <button mat-stroked-button color="accent">View Projects</button>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="mat-display-1" style="margin-bottom: 8px;">JACK MASSEY</h1>
+        <h2 class="mat-headline" style="color: #ccc; font-weight: 400;">
+          Computer Scientist · Agentic AI & Finance
+        </h2>
+        <p class="mat-body-1 hero-description">
+          Designing intelligent systems that reason, decide, and adapt — with a focus on AI-driven finance.
+        </p>
+        <div class="hero-quote">
+          <p class="mat-body-2">
+            "Building the future where artificial intelligence meets financial innovation."
+          </p>
+        </div>
+        <div class="button-row">
+          <button mat-raised-button color="primary" routerLink="/projects">Explore My Work</button>
+          <button mat-stroked-button color="accent" routerLink="/about">Learn About Me</button>
+          <button mat-stroked-button routerLink="/contact">Get In Touch</button>
+        </div>
+      </div>
     </div>
+    <div class="scroll-indicator" (click)="scrollToAbout()">⌄</div>
   </mat-card>
 </main>
+
+<section id="about" class="mat-typography about-section">
+  <h2 class="mat-title">Who I Am</h2>
+  <p class="mat-body-1">
+    I'm a computer science student specializing in AI-driven systems — with a deep interest in intelligent agents, machine learning, and the application of AI in finance. My work spans LLMs, reasoning, and simulations, all rooted in real-world problem-solving.
+  </p>
+</section>
+
+<section id="projects" class="projects-section">
+  <h2 class="mat-title">Featured Projects</h2>
+  <div class="project-grid">
+    <mat-card class="project-card">
+      <mat-card-title>Finance Utility Toolkit</mat-card-title>
+      <mat-card-content>
+        ML-powered analysis of financial indicators with Python, Pandas, and Seaborn.
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="project-card">
+      <mat-card-title>Solo Chess AI</mat-card-title>
+      <mat-card-content>
+        A game engine written in Java with rule-based and AI-powered puzzle solving.
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>
