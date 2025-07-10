@@ -1,22 +1,23 @@
 .contact-container {
-  padding: 32px 24px;
-  color: #f2f6f7;
-  background-color: var(--dark-green);
+  padding: var(--spacing-lg) var(--spacing-md);
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
   min-height: 100vh;
   font-family: 'Inter', sans-serif;
 
   .intro-text {
     font-size: 1.25rem;
-    font-weight: 300;
+    font-weight: 400;
     text-align: center;
-    margin-bottom: 48px;
-    color: var(--warm-gray);
+    margin-bottom: var(--spacing-xl);
+    color: var(--text-secondary);
+    line-height: 1.6;
   }
 
   .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    gap: var(--spacing-lg);
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
@@ -24,66 +25,72 @@
   }
 
   .form-card, .info-card, .testimonial-card {
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--bg-tertiary);
     border-radius: var(--border-radius-large);
-    box-shadow: var(--shadow-light);
-    margin-bottom: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
+    box-shadow: var(--shadow-medium);
+    margin-bottom: var(--spacing-md);
+    border: 1px solid var(--border-primary);
+    backdrop-filter: blur(10px);
     transition: var(--transition);
+    padding: var(--spacing-md);
     
     &:hover {
-      box-shadow: var(--shadow-medium);
+      box-shadow: var(--shadow-glow);
       transform: translateY(-2px);
+      border-color: var(--border-accent);
     }
   }
 
   .full-width {
     width: 100%;
-    margin-bottom: 16px;
+    margin-bottom: var(--spacing-sm);
   }
 
   .submit-btn {
     width: 100%;
-    padding: 12px 24px;
-    background-color: var(--accent-teal) !important;
-    color: var(--dark-green) !important;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--accent-bright) !important;
+    color: var(--bg-primary) !important;
     font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    border: none;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-light);
     transition: var(--transition);
+    cursor: pointer;
     
     &:hover {
-      background-color: var(--primary-green) !important;
-      color: var(--warm-gray) !important;
-      box-shadow: var(--shadow-medium);
+      background-color: var(--accent-hover) !important;
+      color: var(--bg-primary) !important;
+      box-shadow: var(--shadow-glow);
       transform: translateY(-2px);
     }
   }
 
   .contact-item {
-    margin-bottom: 12px;
+    margin-bottom: var(--spacing-sm);
     
     a {
-      color: var(--accent-teal);
+      color: var(--link-color);
       text-decoration: none;
       font-weight: 500;
       transition: var(--transition);
       
       &:hover {
-        color: var(--warm-gray);
-        text-decoration: underline;
+        color: var(--link-hover);
+        text-shadow: 0 0 8px var(--link-hover);
       }
     }
   }
 
   .testimonial {
     font-style: italic;
+    color: var(--text-secondary);
     
     .testimonial-author {
       font-weight: 600;
-      margin-top: 12px;
-      color: var(--accent-teal);
+      margin-top: var(--spacing-sm);
+      color: var(--accent-bright);
     }
   }
 }

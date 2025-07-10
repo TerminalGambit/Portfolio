@@ -26,6 +26,14 @@
             </ul>
           </div>
 
+          <div class="learning-section" *ngIf="project.learnings">
+            <h4>
+              <mat-icon>lightbulb</mat-icon>
+              What I Learned:
+            </h4>
+            <p class="learning-text">{{ project.learnings }}</p>
+          </div>
+
           <div class="technologies-section">
             <h4>Technologies Used:</h4>
             <div class="tech-chips">

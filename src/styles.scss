@@ -1,22 +1,80 @@
 @use '@angular/material' as mat;
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@200;300;400;500;600;700;800&display=swap');
 
-// Modern Color Variables
+// Modern Color Variables - Phase 1 Overhaul
 :root {
-  --primary-green: #1D5D4B;
-  --accent-teal: #00D2B8;
-  --light-green: #E8F5F3;
-  --dark-green: #0F2922;
-  --warm-gray: #F8F9FA;
-  --cool-gray: #6C757D;
-  --text-primary: #212529;
-  --text-secondary: #6C757D;
-  --shadow-light: 0 2px 10px rgba(29, 93, 75, 0.08);
-  --shadow-medium: 0 4px 20px rgba(29, 93, 75, 0.12);
-  --shadow-heavy: 0 8px 30px rgba(29, 93, 75, 0.16);
+  // Primary Background Colors
+  --bg-primary: #0A0F0C;           // Very dark green/near-black background
+  --bg-secondary: #111A15;         // Slightly lighter dark green
+  --bg-tertiary: #1A2B20;          // Card/component background
+  --bg-overlay: rgba(10, 15, 12, 0.9); // Overlay background
+  
+  // Accent Colors
+  --accent-bright: #00FF88;        // Bright green accent
+  --accent-primary: #00CC6A;       // Primary bright green
+  --accent-secondary: #33FF99;     // Secondary bright green
+  --accent-hover: #00B85C;         // Hover state for accents
+  
+  // Blue Accent Colors
+  --accent-blue: #00AAFF;          // Bright blue accent
+  --accent-blue-dark: #0088CC;     // Dark blue accent
+  --accent-blue-light: #33BBFF;    // Light blue accent
+  --accent-cyan: #00DDFF;          // Cyan accent
+  
+  // Complementary Colors
+  --link-color: #4DFFB8;           // Links - softer bright green
+  --link-hover: #66FFCC;           // Link hover state
+  --secondary-button: #2A4A35;     // Secondary button background
+  --secondary-button-hover: #3A5A45; // Secondary button hover
+  
+  // Status Colors
+  --status-success: #00FF88;       // Success state
+  --status-warning: #FFB800;       // Warning state
+  --status-error: #FF4444;         // Error state
+  --status-info: #00AAFF;          // Info state
+  
+  // Text Colors
+  --text-primary: #FFFFFF;         // Primary text (white)
+  --text-secondary: #B8D4C2;       // Secondary text (light green-gray)
+  --text-tertiary: #8BA99A;        // Tertiary text (muted green)
+  --text-accent: #00FF88;          // Accent text
+  
+  // Border Colors
+  --border-primary: #2A4A35;       // Primary borders
+  --border-secondary: #1A2B20;     // Secondary borders
+  --border-accent: #00FF88;        // Accent borders
+  
+  // Shadow Colors
+  --shadow-light: 0 2px 10px rgba(0, 255, 136, 0.1);
+  --shadow-medium: 0 4px 20px rgba(0, 255, 136, 0.15);
+  --shadow-heavy: 0 8px 30px rgba(0, 255, 136, 0.2);
+  --shadow-glow: 0 0 20px rgba(0, 255, 136, 0.3);
+  
+  // Layout & Spacing
   --border-radius: 12px;
   --border-radius-large: 20px;
+  --border-radius-small: 8px;
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-xxl: 64px;
+  
+  // Transitions
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.2s ease;
+  --transition-slow: all 0.5s ease;
+  
+  // Legacy Variables (for backward compatibility)
+  --primary-green: var(--bg-tertiary);
+  --accent-teal: var(--accent-bright);
+  --light-green: var(--text-secondary);
+  --dark-green: var(--bg-secondary);
+  --warm-gray: var(--text-primary);
+  --cool-gray: var(--text-tertiary);
+  --text-primary-legacy: var(--text-primary);
+  --text-secondary-legacy: var(--text-secondary);
 }
 
 @include mat.core();
@@ -26,16 +84,206 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', 'Roboto', "Helvetica Neue", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #044e42;
+  background-color: var(--bg-primary);
   background-image: url('/assets/images/home-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Inter', 'Roboto', "Helvetica Neue", sans-serif;
+  color: var(--text-primary);
+}
+
+// Global Typography
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent-bright), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: var(--text-primary);
+}
+
+h3 {
+  font-size: 2rem;
+  color: var(--text-secondary);
+}
+
+p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  
+  &:hover {
+    color: var(--link-hover);
+    text-shadow: 0 0 8px var(--link-hover);
+  }
+}
+
+// Enhanced Card Styling
+.card {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-medium);
+  transition: var(--transition);
+  
+  &:hover {
+    border-color: var(--border-accent);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-4px);
+  }
+  
+  &.card-large {
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-large);
+  }
+  
+  &.card-small {
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-small);
+  }
+  
+  &.card-glass {
+    background: var(--bg-overlay);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+// Button Styles
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  border-radius: var(--border-radius);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  
+  &.btn-primary {
+    background: var(--accent-bright);
+    color: var(--bg-primary);
+    
+    &:hover {
+      background: var(--accent-hover);
+      box-shadow: var(--shadow-glow);
+      transform: translateY(-2px);
+    }
+  }
+  
+  &.btn-secondary {
+    background: var(--secondary-button);
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
+    
+    &:hover {
+      background: var(--secondary-button-hover);
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+  }
+  
+  &.btn-outline {
+    background: transparent;
+    color: var(--accent-bright);
+    border: 2px solid var(--accent-bright);
+    
+    &:hover {
+      background: var(--accent-bright);
+      color: var(--bg-primary);
+      box-shadow: var(--shadow-glow);
+    }
+  }
+}
+
+// Utility Classes
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-tertiary { color: var(--text-tertiary); }
+.text-accent { color: var(--text-accent); }
+
+.bg-primary { background-color: var(--bg-primary); }
+.bg-secondary { background-color: var(--bg-secondary); }
+.bg-tertiary { background-color: var(--bg-tertiary); }
+
+.border-accent { border-color: var(--border-accent); }
+.border-primary { border-color: var(--border-primary); }
+
+.shadow-light { box-shadow: var(--shadow-light); }
+.shadow-medium { box-shadow: var(--shadow-medium); }
+.shadow-heavy { box-shadow: var(--shadow-heavy); }
+.shadow-glow { box-shadow: var(--shadow-glow); }
+
+// Spacing Utilities
+.p-xs { padding: var(--spacing-xs); }
+.p-sm { padding: var(--spacing-sm); }
+.p-md { padding: var(--spacing-md); }
+.p-lg { padding: var(--spacing-lg); }
+.p-xl { padding: var(--spacing-xl); }
+.p-xxl { padding: var(--spacing-xxl); }
+
+.m-xs { margin: var(--spacing-xs); }
+.m-sm { margin: var(--spacing-sm); }
+.m-md { margin: var(--spacing-md); }
+.m-lg { margin: var(--spacing-lg); }
+.m-xl { margin: var(--spacing-xl); }
+.m-xxl { margin: var(--spacing-xxl); }
+
+// Responsive Design
+@media (max-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.75rem; }
+  
+  .card {
+    padding: var(--spacing-sm);
+  }
+  
+  .btn {
+    padding: var(--spacing-sm);
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
 }

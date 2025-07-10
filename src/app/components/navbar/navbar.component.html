@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar [class.scrolled]="isScrolled">
   <span class="logo">Jack Massey</span>
   <span class="spacer"></span>
   <button mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
@@ -17,8 +17,8 @@
     <mat-icon>contact_mail</mat-icon>
     Contact
   </button>
-  <a mat-button href="/assets/resume-jack-massey.pdf" target="_blank">
-    <mat-icon>description</mat-icon>
-    Resume
+  <a mat-button href="/assets/resume-jack-massey.pdf" target="_blank" class="resume-btn">
+    <mat-icon>download</mat-icon>
+    Download Resume
   </a>
 </mat-toolbar>

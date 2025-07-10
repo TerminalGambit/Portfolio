@@ -15,6 +15,22 @@ import { CommonModule } from '@angular/common';
 export class ProjectsComponent {
   projects = [
     {
+      title: 'AI Portfolio Website',
+      period: '2025',
+      description: 'Modern portfolio website built with Angular featuring AI-driven design, responsive layouts, and interactive components. Showcases projects, skills, and professional experience.',
+      technologies: ['Angular', 'TypeScript', 'SCSS', 'Material Design', 'Responsive Design'],
+      status: 'Active Development',
+      type: 'Web Application',
+      github: 'https://github.com/TerminalGambit/F1-ML',
+      highlights: [
+        'Modern Angular architecture',
+        'Responsive mobile-first design',
+        'Interactive UI components',
+        'AI-inspired color palette'
+      ],
+      learnings: 'Building this portfolio taught me advanced Angular concepts, component architecture, and modern web design principles. I learned about responsive design, CSS animations, and creating engaging user experiences. The project also helped me understand the importance of accessibility and performance optimization in web applications.'
+    },
+    {
       title: 'Web Application – Shopping & Recipes Management',
       period: '2025',
       description: 'Full-stack team application (Agile) with recipe API integration and user group management. Deployed on Raspberry Pi with Docker and Nginx reverse proxy.',
@@ -26,7 +42,8 @@ export class ProjectsComponent {
         'API integration for recipes',
         'User group management system',
         'Containerized deployment'
-      ]
+      ],
+      learnings: 'This project taught me the complexities of full-stack development in a team environment. I gained valuable experience with Agile methodologies, API integration patterns, and DevOps practices. Working with Docker and Nginx for deployment deepened my understanding of containerization and reverse proxy configurations, while managing user groups introduced me to complex database relationships and authentication systems.'
     },
     {
       title: 'Finance Utility – Modular Market Analysis',
@@ -41,7 +58,8 @@ export class ProjectsComponent {
         'Real-time market data processing',
         'Modular architecture',
         'Financial data visualization'
-      ]
+      ],
+      learnings: 'This project bridged my interest in computer science and finance, teaching me how to process and analyze large financial datasets. I learned about technical indicators, data visualization best practices, and the importance of modular code architecture for maintainability. Working with real-time APIs also taught me about rate limiting, error handling, and data validation in financial contexts.'
     },
     {
       title: 'Solo Chess – Java Game Reproduction',
@@ -56,7 +74,8 @@ export class ProjectsComponent {
         'Graphics rendering with libGDX',
         'Object-oriented design patterns',
         'UML documentation'
-      ]
+      ],
+      learnings: 'Developing this game strengthened my object-oriented programming skills and taught me the importance of clean architecture in complex systems. I gained experience with game development frameworks, graphics rendering, and state management. The project also reinforced the value of proper documentation and UML modeling for communicating design decisions.'
     },
     {
       title: 'Multi-Client Server – Network Communication',
@@ -70,7 +89,8 @@ export class ProjectsComponent {
         'Custom signal processing',
         'Thread-safe communication',
         'Team collaboration'
-      ]
+      ],
+      learnings: 'This project introduced me to the complexities of network programming and concurrent systems. I learned about socket programming, thread synchronization, and signal handling mechanisms. Working in a team of three taught me valuable collaboration skills and the importance of clear communication protocols, both in code and team coordination.'
     },
     {
       title: 'Terminal Game in C',
@@ -84,7 +104,8 @@ export class ProjectsComponent {
         'Low-level system programming',
         'Command-line interface design',
         'Performance optimization'
-      ]
+      ],
+      learnings: 'Programming in C gave me a deep understanding of memory management and low-level system operations. I learned about pointers, memory allocation/deallocation, and the importance of writing efficient code. This project taught me to think critically about resource usage and helped me understand how higher-level languages abstract away complexity.'
     }
   ];
 

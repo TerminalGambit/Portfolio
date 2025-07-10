@@ -1,78 +1,193 @@
 .about-container {
-  padding: 16px 24px;
-  color: #f2f6f7;
-  background-color: var(--dark-green);
+  padding: var(--spacing-md);
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
   min-height: 100vh;
   font-family: 'Inter', sans-serif;
 }
 
 .about-intro {
-  padding: 40px 20px;
-  background-color: rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-xl) var(--spacing-md);
+  background-color: var(--bg-tertiary);
   border-radius: var(--border-radius-large);
-  box-shadow: var(--shadow-light);
+  box-shadow: var(--shadow-medium);
+  border: 1px solid var(--border-primary);
+  transition: var(--transition);
+  
+  &:hover {
+    border-color: var(--border-accent);
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .profile-section {
+    display: flex;
+    gap: var(--spacing-xl);
+    align-items: flex-start;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  
+  .profile-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+    
+    .avatar-placeholder {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-bright), var(--accent-blue-light), var(--accent-cyan));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-glow);
+      transition: var(--transition);
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+      
+      .profile-icon {
+        font-size: 4rem !important;
+        color: var(--bg-primary);
+      }
+      
+      .profile-img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+  }
+  
+  .profile-info {
+    flex: 1;
+    
+    .intro-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+      margin: var(--spacing-md) 0;
+      
+      @media (max-width: 768px) {
+        justify-content: center;
+      }
+      
+      .highlight-item {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        background: var(--bg-overlay);
+        border-radius: var(--border-radius-small);
+        border: 1px solid var(--border-secondary);
+        transition: var(--transition);
+        
+        &:hover {
+          border-color: var(--border-accent);
+        }
+        
+        mat-icon {
+          color: var(--accent-bright);
+          font-size: 1.1rem;
+        }
+        
+        span {
+          color: var(--text-secondary);
+          font-size: 0.9rem;
+          font-weight: 500;
+        }
+      }
+    }
+  }
   
   .intro-text {
-    font-size: 1.25rem;
-    font-weight: 300;
-    color: var(--warm-gray);
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: var(--spacing-md) 0;
   }
 
   .personal-quote {
     display: flex;
     align-items: center;
-    margin: 20px 0;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.08);
-    border-left: 4px solid var(--accent-teal);
+    margin: var(--spacing-md) 0;
+    padding: var(--spacing-sm);
+    background: var(--bg-overlay);
+    border-left: 4px solid var(--accent-bright);
+    border-radius: var(--border-radius-small);
   }
 
   .quote-icon {
-    margin-right: 8px;
-    color: #00dab8;
+    margin-right: var(--spacing-xs);
+    color: var(--accent-bright);
   }
 }
 
 .education-section, .experience-section, .skills-section, .certifications-section, .leadership-section {
-  margin-top: 32px;
-  padding: 32px 16px;
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-lg) var(--spacing-sm);
   border-radius: var(--border-radius-large);
-  background: rgba(15, 41, 34, 0.9);
+  background: var(--bg-tertiary);
   box-shadow: var(--shadow-medium);
+  border: 1px solid var(--border-primary);
+  transition: var(--transition);
+  
+  &:hover {
+    border-color: var(--border-accent);
+  }
   
   h2 {
     text-align: center;
-    color: var(--accent-teal);
-    font-weight: 500;
-    margin-bottom: 24px;
+    color: var(--accent-bright);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  &:nth-child(even) h2 {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   
   .education-card, .experience-card, .skill-category, .certification-card, .leadership-card {
-    margin-bottom: 20px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.08);
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--bg-overlay);
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow-light);
+    border: 1px solid var(--border-secondary);
+    transition: var(--transition);
+    
+    &:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
   }
     
   .skill-chips, .technologies {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: var(--spacing-sm);
   }
 
   .skill-chip, .tech-chip {
-    background: var(--accent-teal);
-    color: var(--dark-green);
-    padding: 6px 12px;
+    background: var(--accent-bright);
+    color: var(--bg-primary);
+    padding: var(--spacing-xs) var(--spacing-sm);
     font-size: 0.875rem;
     font-weight: 500;
-    border-radius: 20px;
-    box-shadow: var(--shadow-light);
+    border-radius: var(--border-radius-small);
     transition: var(--transition);
     
     &:hover {
-      box-shadow: var(--shadow-medium);
+      background: var(--accent-hover);
       transform: translateY(-2px);
     }
   }
@@ -82,9 +197,15 @@
   .certification-item {
     display: flex;
     align-items: center;
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    background: var(--bg-overlay);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-secondary);
+    
     .cert-icon {
-      margin-right: 8px;
-      color: gold;
+      margin-right: var(--spacing-xs);
+      color: var(--status-warning);
     }
   }
 }
@@ -93,7 +214,22 @@
   .leadership-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: var(--spacing-md);
+  }
+  
+  .leadership-card {
+    flex: 1;
+    min-width: 250px;
+    
+    h3 {
+      color: var(--accent-bright);
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
   }
 }
 
