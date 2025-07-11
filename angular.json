@@ -73,6 +73,7 @@
               ],
               "outputHashing": "all",
               "outputMode": "static",
+              "ssr": false,
               "assets": [
                 {
                   "glob": "**/*",
