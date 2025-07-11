@@ -30,21 +30,29 @@ export class AboutComponent implements OnInit {
 
   experiences = [
     {
-      title: 'Research Intern',
-      company: 'i3S Research Laboratory',
+      title: 'Summer Intern',
+      company: 'i3S Laboratory',
       location: 'Sophia Antipolis',
-      period: 'Summer 2024',
-      description: 'Integrated Constraint Programming with NLP, optimized search processes, and applied KL Divergence for language model evaluation.',
-      technologies: ['Constraint Programming', 'NLP', 'Beam Search', 'KL Divergence'],
+      period: 'June 2024 – July 2024',
+      description: 'Explored integration of Constraint Programming & NLP for real-world problem solving. Worked on Beam Search & Decoding Strategies in NLP. Applied KL Divergence & Perplexity to evaluate generated content. Reproduced results from Yao et al. (ICLR 2024); contributions integrated into a paper for CP 2024.',
+      technologies: ['Constraint Programming', 'NLP', 'Beam Search', 'KL Divergence', 'Perplexity', 'Scientific Research'],
       publication: 'https://arxiv.org/pdf/2407.13490'
     },
     {
+      title: 'Member',
+      company: 'Google Developer Student Clubs',
+      location: 'Université Côte d\'Azur',
+      period: 'September 2023 – June 2025',
+      description: 'Joined at the start of second year of CS degree. Introduced to the Go programming language and its use in Microservices architecture.',
+      technologies: ['Go', 'Microservices', 'Software Development', 'Community Building']
+    },
+    {
       title: 'Private Tutor',
-      company: 'Self-Employed',
+      company: 'Self-employed',
       location: 'Monaco',
-      period: '2022-Present',
-      description: 'Personalized tutoring in computer science, mathematics, physics, and chess.',
-      technologies: ['Teaching', 'Problem Solving', 'Academic Support']
+      period: 'September 2022 – Present',
+      description: 'Grew leadership skills through multiple young students. Taught Mathematics, Physics, Computer Science & Chess to students of various levels.',
+      technologies: ['Teaching', 'Leadership', 'Mathematics', 'Physics', 'Computer Science', 'Chess']
     }
   ];
 }

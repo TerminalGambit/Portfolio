@@ -1,82 +1,149 @@
 <section class="contact-container mat-typography">
   <div class="contact-content">
-    <h1 class="mat-display-1">Get In Touch</h1>
+    <h1 class="mat-display-1">Let's Connect</h1>
     <p class="mat-body-1 intro-text">
       Interested in collaborating on AI projects, discussing research opportunities, or exploring
       innovative solutions in finance and technology? I'd love to hear from you.
     </p>
 
-    <div class="contact-grid">
-      <div class="contact-form">
-        <mat-card class="form-card">
-          <mat-card-header>
-            <mat-card-title>Send me a message</mat-card-title>
-          </mat-card-header>
+    <div class="contact-methods">
+      <div class="primary-contact">
+        <h2>📧 Primary Contact</h2>
+        <mat-card class="contact-method-card email-card">
           <mat-card-content>
-            <form #contactFormRef="ngForm" (ngSubmit)="onSubmit()">
-              <mat-form-field appearance="outline" class="full-width">
-                <mat-label>Name</mat-label>
-                <input matInput [(ngModel)]="contactForm.name" name="name" required>
-              </mat-form-field>
-
-              <mat-form-field appearance="outline" class="full-width">
-                <mat-label>Email</mat-label>
-                <input matInput type="email" [(ngModel)]="contactForm.email" name="email" required>
-              </mat-form-field>
-
-              <mat-form-field appearance="outline" class="full-width">
-                <mat-label>Message</mat-label>
-                <textarea matInput rows="5" [(ngModel)]="contactForm.message" name="message" required></textarea>
-              </mat-form-field>
-
-              <button mat-raised-button color="primary" type="submit" class="submit-btn">
-                Send Message
-              </button>
-            </form>
+            <div class="contact-method">
+              <mat-icon class="contact-icon">email</mat-icon>
+              <div class="contact-details">
+                <h3>Email</h3>
+                <a href="mailto:jackmassey.monaco@outlook.com" class="contact-link">
+                  jackmassey.monaco&#64;outlook.com
+                </a>
+                <p class="contact-description">Best for formal inquiries, collaboration proposals, and detailed discussions</p>
+              </div>
+            </div>
           </mat-card-content>
         </mat-card>
       </div>
 
-      <div class="contact-info">
-        <mat-card class="info-card">
-          <mat-card-header>
-            <mat-card-title>Contact Information</mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <div class="contact-item">
-              <strong>Email:</strong>
-              <a href="mailto:jackmassey.monaco&#64;outlook.com">jackmassey.monaco&#64;outlook.com</a>
-            </div>
-            <div class="contact-item">
-              <strong>Phone:</strong>
-              <span>+33 6 40 61 37 35</span>
-            </div>
-            <div class="contact-item">
-              <strong>LinkedIn:</strong>
-              <a href="https://www.linkedin.com/in/masseyjack/" target="_blank">LinkedIn Profile</a>
-            </div>
-            <div class="contact-item">
-              <strong>GitHub:</strong>
-              <a href="https://github.com/TerminalGambit/" target="_blank">GitHub Profile</a>
-            </div>
-          </mat-card-content>
-        </mat-card>
+      <div class="secondary-contact">
+        <h2>📱 Additional Ways to Reach Me</h2>
+        <div class="contact-methods-grid">
+          <mat-card class="contact-method-card phone-card">
+            <mat-card-content>
+              <div class="contact-method">
+                <mat-icon class="contact-icon">phone</mat-icon>
+                <div class="contact-details">
+                  <h3>Phone</h3>
+                  <a href="tel:+33640613735" class="contact-link">
+                    +33 6 40 61 37 35
+                  </a>
+                  <p class="contact-description">For urgent matters or quick discussions</p>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
 
-        <mat-card class="testimonial-card">
-          <mat-card-header>
-            <mat-card-title>What others say</mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <div class="testimonial">
-              <p class="mat-body-2">
-                "Jack demonstrates exceptional analytical thinking and a deep understanding of complex AI concepts. 
-                His work on constraint programming integration shows real innovation."
-              </p>
-              <p class="testimonial-author">- Research Supervisor, i3S Laboratory</p>
-            </div>
-          </mat-card-content>
-        </mat-card>
+          <mat-card class="contact-method-card linkedin-card">
+            <mat-card-content>
+              <div class="contact-method">
+                <mat-icon class="contact-icon">business</mat-icon>
+                <div class="contact-details">
+                  <h3>LinkedIn</h3>
+                  <a href="https://www.linkedin.com/in/masseyjack/" target="_blank" class="contact-link">
+                    /in/masseyjack
+                  </a>
+                  <p class="contact-description">Professional networking and career opportunities</p>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card class="contact-method-card github-card">
+            <mat-card-content>
+              <div class="contact-method">
+                <mat-icon class="contact-icon">code</mat-icon>
+                <div class="contact-details">
+                  <h3>GitHub</h3>
+                  <a href="https://github.com/TerminalGambit/" target="_blank" class="contact-link">
+                    /TerminalGambit
+                  </a>
+                  <p class="contact-description">View my code, contribute to projects, or discuss technical topics</p>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
       </div>
+    </div>
+
+    <div class="location-info">
+      <mat-card class="location-card">
+        <mat-card-header>
+          <mat-card-title>
+            <mat-icon>location_on</mat-icon>
+            Based in Monaco
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="location-description">
+            Currently pursuing my MSc in Data and Finance at Albert School x Mines Paris PSL. 
+            Available for remote collaboration and open to opportunities in the French Riviera region.
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="collaboration-info">
+      <mat-card class="collaboration-card">
+        <mat-card-header>
+          <mat-card-title>🤝 Open to Collaboration</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="collaboration-topics">
+            <div class="topic-category">
+              <h4>🤖 AI & Machine Learning</h4>
+              <ul>
+                <li>MLOps and production ML systems</li>
+                <li>Time-series analysis and forecasting</li>
+                <li>Multi-agent systems and agentic AI</li>
+              </ul>
+            </div>
+            <div class="topic-category">
+              <h4>💼 Finance & Data Science</h4>
+              <ul>
+                <li>Quantitative finance modeling</li>
+                <li>Algorithmic trading strategies</li>
+                <li>Financial data analysis and visualization</li>
+              </ul>
+            </div>
+            <div class="topic-category">
+              <h4>🔬 Research & Development</h4>
+              <ul>
+                <li>Academic research collaborations</li>
+                <li>Open-source project contributions</li>
+                <li>Technology consulting and advice</li>
+              </ul>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="testimonial-section">
+      <mat-card class="testimonial-card">
+        <mat-card-header>
+          <mat-card-title>💬 What others say</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="testimonial">
+            <p class="testimonial-text">
+              "Jack demonstrates exceptional analytical thinking and a deep understanding of complex AI concepts. 
+              His work on constraint programming integration shows real innovation."
+            </p>
+            <p class="testimonial-author">— Research Supervisor, i3S Laboratory</p>
+          </div>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
 </section>

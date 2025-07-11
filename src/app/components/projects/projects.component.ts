@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -16,7 +17,10 @@ import { ProjectTechnology } from '../../interfaces/technology.interface';
 })
 export class ProjectsComponent {
   
-  constructor(private technologyService: TechnologyService) {}
+  constructor(
+    private technologyService: TechnologyService,
+    private router: Router
+  ) {}
   
   getProjectTechnologies(technologies: string[]): ProjectTechnology[] {
     return this.technologyService.getProjectTechnologies(technologies);
@@ -24,13 +28,45 @@ export class ProjectsComponent {
   
   projects = [
     {
+      title: 'ApexAgent: F1 Machine Learning Project',
+      period: '2024-2025',
+      description: 'Sophisticated, open-source Formula 1 analytics platform combining cutting-edge machine learning with responsible AI engineering practices. Features end-to-end MLOps capabilities delivering real-world predictive insights.',
+      technologies: ['Python', 'XGBoost', 'TensorFlow', 'Pandas', 'FastF1 API', 'Scikit-learn', 'MLOps'],
+      status: 'Production Ready',
+      type: 'Machine Learning',
+      github: 'https://github.com/TerminalGambit/ApexAgent',
+      featured: true,
+      metrics: {
+        dataProcessed: '6,502+ laps',
+        racesAnalyzed: '6 major F1 races',
+        features: '56 sophisticated features',
+        bestRMSE: '0.350s',
+        bestR2: '0.992',
+        dataRetention: '96-100%'
+      },
+      models: [
+        { name: 'ElasticNet', rmse: '0.350s', r2: '0.992', technique: 'Regularized Linear' },
+        { name: 'Ensemble Voting', rmse: '0.365s', r2: '0.991', technique: 'Multi-Model Combination' },
+        { name: 'XGBoost Advanced', rmse: '0.377s', r2: '0.990', technique: 'Gradient Boosting' }
+      ],
+      highlights: [
+        'End-to-end MLOps pipeline with automated validation',
+        '7 production-ready models with sub-second accuracy',
+        'Comprehensive feature engineering (56 features)',
+        'Resolved data leakage for realistic performance',
+        'Multi-season support (2024-2025 F1 data)',
+        'Production-ready infrastructure with monitoring'
+      ],
+      learnings: 'ApexAgent taught me the complete MLOps lifecycle from data ingestion to model deployment. I gained expertise in responsible AI development, feature engineering, and production-ready ML systems. The project demonstrated the importance of rigorous validation, data quality, and engineering excellence in real-world ML applications. Working with Formula 1 data also deepened my understanding of time-series analysis and domain-specific feature engineering.'
+    },
+    {
       title: 'AI Portfolio Website',
       period: '2025',
       description: 'Modern portfolio website built with Angular featuring AI-driven design, responsive layouts, and interactive components. Showcases projects, skills, and professional experience.',
       technologies: ['Angular', 'TypeScript', 'SCSS', 'Material Design', 'Responsive Design'],
       status: 'Active Development',
       type: 'Web Application',
-      github: 'https://github.com/TerminalGambit/F1-ML',
+      github: 'https://github.com/TerminalGambit/portfolio',
       highlights: [
         'Modern Angular architecture',
         'Responsive mobile-first design',
@@ -120,6 +156,7 @@ export class ProjectsComponent {
 
   getStatusColor(status: string): string {
     switch (status) {
+      case 'Production Ready': return 'primary';
       case 'Completed': return 'primary';
       case 'Active Development': return 'accent';
       case 'In Development': return 'warn';
@@ -129,6 +166,7 @@ export class ProjectsComponent {
 
   getProjectIcon(type: string): string {
     switch (type) {
+      case 'Machine Learning': return 'psychology';
       case 'Web Application': return 'web';
       case 'Data Analysis': return 'analytics';
       case 'Game Development': return 'sports_esports';
@@ -140,5 +178,11 @@ export class ProjectsComponent {
 
   openLink(url: string): void {
     window.open(url, '_blank');
+  }
+
+  viewProjectDetail(projectTitle: string): void {
+    if (projectTitle.includes('ApexAgent')) {
+      this.router.navigate(['/project', 'apexagent']);
+    }
   }
 }

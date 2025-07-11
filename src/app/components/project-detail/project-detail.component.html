@@ -1,0 +1,252 @@
+<section class="project-detail-container mat-typography" *ngIf="projectId === 'apexagent'">
+  <div class="project-detail-content">
+    <!-- Header Section -->
+    <div class="project-header">
+      <button mat-icon-button (click)="goBack()" class="back-button">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <div class="header-content">
+        <h1 class="project-title">{{ apexAgentProject.title }}</h1>
+        <p class="project-subtitle">{{ apexAgentProject.subtitle }}</p>
+        <div class="header-actions">
+          <button mat-raised-button color="primary" (click)="openLink(apexAgentProject.github)">
+            <mat-icon>code</mat-icon>
+            View on GitHub
+          </button>
+          <mat-chip class="status-chip" color="primary" selected>Production Ready</mat-chip>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overview Section -->
+    <mat-card class="overview-card">
+      <mat-card-header>
+        <mat-card-title>🎯 Project Overview</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="overview-text">{{ apexAgentProject.overview }}</p>
+        <div class="vision-section">
+          <h3>Vision & Philosophy</h3>
+          <p>{{ apexAgentProject.vision }}</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Metrics Grid -->
+    <div class="metrics-showcase">
+      <h2>📊 Project Metrics</h2>
+      <div class="metrics-grid-detail">
+        <div class="metric-card">
+          <div class="metric-value">{{ apexAgentProject.metrics.dataProcessed }}</div>
+          <div class="metric-label">Data Processed</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">{{ apexAgentProject.metrics.racesAnalyzed }}</div>
+          <div class="metric-label">Races Analyzed</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">{{ apexAgentProject.metrics.features }}</div>
+          <div class="metric-label">Features Engineered</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">{{ apexAgentProject.metrics.bestRMSE }}</div>
+          <div class="metric-label">Best RMSE</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">{{ apexAgentProject.metrics.bestR2 }}</div>
+          <div class="metric-label">Best R²</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">{{ apexAgentProject.metrics.dataRetention }}</div>
+          <div class="metric-label">Data Retention</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Model Performance Section -->
+    <mat-card class="models-detailed-card">
+      <mat-card-header>
+        <mat-card-title>🤖 Machine Learning Models Performance</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="models-detailed-table">
+          <div class="model-detailed-header">
+            <span>Model</span>
+            <span>RMSE</span>
+            <span>R²</span>
+            <span>Technique</span>
+            <span>Description</span>
+          </div>
+          <div class="model-detailed-row" *ngFor="let model of apexAgentProject.models">
+            <span class="model-name-detailed">{{ model.name }}</span>
+            <span class="model-rmse-detailed">{{ model.rmse }}</span>
+            <span class="model-r2-detailed">{{ model.r2 }}</span>
+            <span class="model-technique-detailed">{{ model.technique }}</span>
+            <span class="model-description">{{ model.description }}</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Core Features Section -->
+    <div class="features-section">
+      <h2>⚡ Core Features & Capabilities</h2>
+      <div class="features-grid">
+        <mat-card class="feature-card" *ngFor="let feature of apexAgentProject.coreFeatures">
+          <mat-card-header>
+            <mat-card-title [innerHTML]="feature.title"></mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p *ngIf="feature.description">{{ feature.description }}</p>
+            <ul *ngIf="feature.items.length > 0">
+              <li *ngFor="let item of feature.items">{{ item }}</li>
+            </ul>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+    <!-- Technical Architecture Section -->
+    <mat-card class="architecture-card">
+      <mat-card-header>
+        <mat-card-title>🏗️ Technical Architecture</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="pipeline-flow">
+          <h3>Data Processing Pipeline</h3>
+          <div class="pipeline-diagram">
+            {{ apexAgentProject.technicalArchitecture.pipeline }}
+          </div>
+          <div class="pipeline-components">
+            <div *ngFor="let component of apexAgentProject.technicalArchitecture.components" class="component-item">
+              {{ component }}
+            </div>
+          </div>
+        </div>
+        <div class="project-structure">
+          <h3>Project Structure</h3>
+          <ul>
+            <li *ngFor="let item of apexAgentProject.technicalArchitecture.structure">{{ item }}</li>
+          </ul>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Key Achievements Section -->
+    <div class="achievements-section">
+      <h2>🏆 Key Technical Achievements</h2>
+      <div class="achievements-grid">
+        <mat-card class="achievement-card" *ngFor="let achievement of apexAgentProject.achievements">
+          <mat-card-header>
+            <mat-card-title [innerHTML]="achievement.title"></mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <ul>
+              <li *ngFor="let item of achievement.items">{{ item }}</li>
+            </ul>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+    <!-- Real-World Applications Section -->
+    <div class="applications-section">
+      <h2>🌍 Real-World Applications</h2>
+      <div class="applications-grid">
+        <mat-card class="application-card" *ngFor="let app of apexAgentProject.realWorldApplications">
+          <mat-card-header>
+            <mat-card-title>{{ app.audience }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <ul>
+              <li *ngFor="let item of app.items">{{ item }}</li>
+            </ul>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+    <!-- Current Status Section -->
+    <mat-card class="status-card">
+      <mat-card-header>
+        <mat-card-title>📈 Current Status & Future Roadmap</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="status-columns">
+          <div class="completed-section">
+            <h3>✅ Completed Phases</h3>
+            <ul>
+              <li *ngFor="let item of apexAgentProject.currentStatus.completed">{{ item }}</li>
+            </ul>
+          </div>
+          <div class="next-phase-section">
+            <h3>🚀 Next Phase: Production Deployment</h3>
+            <ul>
+              <li *ngFor="let item of apexAgentProject.currentStatus.nextPhase">{{ item }}</li>
+            </ul>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Technologies Used Section -->
+    <mat-card class="technologies-card">
+      <mat-card-header>
+        <mat-card-title>🛠️ Technologies Used</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="tech-chips-detailed">
+          <mat-chip *ngFor="let tech of apexAgentProject.technologies" class="tech-chip-detailed">
+            {{ tech }}
+          </mat-chip>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Impact Section -->
+    <mat-card class="impact-card">
+      <mat-card-header>
+        <mat-card-title>🎯 Impact & Innovation</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="impact-text">{{ apexAgentProject.impact }}</p>
+        <div class="final-statement">
+          <p><strong>ApexAgent stands as a testament to what's possible when rigorous engineering practices meet passionate domain expertise, delivering a system that's ready for real-world Formula 1 analytics and strategy optimization.</strong></p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Back to Projects Button -->
+    <div class="navigation-footer">
+      <button mat-raised-button color="primary" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon>
+        Back to Projects
+      </button>
+      <button mat-raised-button (click)="openLink(apexAgentProject.github)">
+        <mat-icon>open_in_new</mat-icon>
+        Explore on GitHub
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Fallback for other project IDs -->
+<section class="project-detail-container mat-typography" *ngIf="projectId !== 'apexagent'">
+  <div class="project-detail-content">
+    <div class="project-header">
+      <button mat-icon-button (click)="goBack()" class="back-button">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <div class="header-content">
+        <h1>Project Not Found</h1>
+        <p>The requested project details are not available yet.</p>
+      </div>
+    </div>
+    <div class="navigation-footer">
+      <button mat-raised-button color="primary" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon>
+        Back to Projects
+      </button>
+    </div>
+  </div>
+</section>

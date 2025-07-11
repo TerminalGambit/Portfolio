@@ -7,17 +7,74 @@
     </p>
 
     <div class="projects-grid">
-      <mat-card class="project-card" *ngFor="let project of projects">
+      <mat-card class="project-card" 
+                [ngClass]="{'featured-project': project.featured}" 
+                *ngFor="let project of projects">
         <mat-card-header>
-          <div mat-card-avatar class="project-avatar">
+          <div mat-card-avatar class="project-avatar" 
+               [ngClass]="{'featured-avatar': project.featured}">
             <mat-icon>{{ getProjectIcon(project.type) }}</mat-icon>
           </div>
           <mat-card-title>{{ project.title }}</mat-card-title>
           <mat-card-subtitle>{{ project.period }} • {{ project.type }}</mat-card-subtitle>
+          <div class="featured-badge" *ngIf="project.featured">
+            <mat-icon>star</mat-icon>
+            <span>Featured Project</span>
+          </div>
         </mat-card-header>
 
         <mat-card-content>
           <p class="mat-body-1 project-description">{{ project.description }}</p>
+
+          <!-- Special metrics section for ApexAgent -->
+          <div class="project-metrics" *ngIf="project.metrics">
+            <h4>📊 Project Metrics:</h4>
+            <div class="metrics-grid">
+              <div class="metric-item">
+                <span class="metric-value">{{ project.metrics.dataProcessed }}</span>
+                <span class="metric-label">Data Processed</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">{{ project.metrics.racesAnalyzed }}</span>
+                <span class="metric-label">Races Analyzed</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">{{ project.metrics.features }}</span>
+                <span class="metric-label">Features Engineered</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">{{ project.metrics.bestRMSE }}</span>
+                <span class="metric-label">Best RMSE</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">{{ project.metrics.bestR2 }}</span>
+                <span class="metric-label">Best R²</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">{{ project.metrics.dataRetention }}</span>
+                <span class="metric-label">Data Retention</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Model performance table for ApexAgent -->
+          <div class="models-section" *ngIf="project.models">
+            <h4>🤖 Model Performance:</h4>
+            <div class="models-table">
+              <div class="model-header">
+                <span>Model</span>
+                <span>RMSE</span>
+                <span>R²</span>
+                <span>Technique</span>
+              </div>
+              <div class="model-row" *ngFor="let model of project.models">
+                <span class="model-name">{{ model.name }}</span>
+                <span class="model-rmse">{{ model.rmse }}</span>
+                <span class="model-r2">{{ model.r2 }}</span>
+                <span class="model-technique">{{ model.technique }}</span>
+              </div>
+            </div>
+          </div>
 
           <div class="project-highlights">
             <h4>Key Features:</h4>
@@ -57,7 +114,12 @@
             <mat-icon>code</mat-icon>
             View Code
           </button>
-          <button mat-button color="primary">
+          <button mat-button color="primary" *ngIf="project.featured" 
+                  (click)="viewProjectDetail(project.title)">
+            <mat-icon>article</mat-icon>
+            Detailed Analysis
+          </button>
+          <button mat-button color="primary" *ngIf="!project.featured">
             <mat-icon>info</mat-icon>
             Learn More
           </button>

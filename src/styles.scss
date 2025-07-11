@@ -273,6 +273,254 @@ a {
 .m-xl { margin: var(--spacing-xl); }
 .m-xxl { margin: var(--spacing-xxl); }
 
+// Phase 6: Scroll Animations & Enhanced Interactivity
+
+// Scroll Animation Base Styles
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animate.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// Animation Variants
+.animate-fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.animate-fade-in-up.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-fade-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.animate-fade-in-left.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-fade-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.animate-fade-in-right.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-scale-in {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.animate-scale-in.animate-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+}
+
+.animate-slide-up.animate-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+// Enhanced Card Hover Effects
+.card {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+    transition: left 0.6s ease;
+    z-index: 1;
+  }
+  
+  &:hover::before {
+    left: 100%;
+  }
+  
+  &:hover {
+    border-color: var(--border-accent);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-6px) scale(1.02);
+  }
+  
+  // Content should be above the shine effect
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+// Enhanced Button Interactions
+.btn {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+    z-index: 1;
+  }
+  
+  &:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+  
+  // Button text should be above ripple effect
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+  
+  &.btn-primary {
+    &:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4);
+      transform: translateY(-3px) scale(1.05);
+    }
+    
+    &:active {
+      transform: translateY(-1px) scale(1.02);
+    }
+  }
+  
+  &.btn-secondary {
+    &:hover {
+      background: var(--secondary-button-hover);
+      border-color: var(--accent-muted);
+      box-shadow: 0 6px 20px rgba(0, 255, 136, 0.2);
+      transform: translateY(-2px) scale(1.03);
+    }
+  }
+  
+  &.btn-outline {
+    &:hover {
+      background: var(--accent-bright);
+      color: var(--bg-primary);
+      box-shadow: 0 6px 20px rgba(0, 255, 136, 0.3);
+      transform: translateY(-2px) scale(1.03);
+    }
+  }
+}
+
+// Focus Styles for Accessibility
+a, button, input, textarea, select {
+  &:focus {
+    outline: 2px solid var(--accent-bright);
+    outline-offset: 2px;
+    border-radius: var(--border-radius-small);
+  }
+  
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+  
+  &:focus-visible {
+    outline: 2px solid var(--accent-bright);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(0, 255, 136, 0.2);
+  }
+}
+
+// Enhanced Link Styles
+a {
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-bright), var(--accent-cyan));
+    transition: width 0.3s ease;
+  }
+  
+  &:hover::after {
+    width: 100%;
+  }
+  
+  &:focus {
+    color: var(--accent-bright);
+    text-shadow: 0 0 8px rgba(0, 255, 136, 0.3);
+  }
+}
+
+// Loading States
+.loading {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.2), transparent);
+    animation: shimmer 1.5s infinite;
+    z-index: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+// Staggered Animation Delays
+.stagger-animation {
+  &:nth-child(1) { animation-delay: 0ms; }
+  &:nth-child(2) { animation-delay: 100ms; }
+  &:nth-child(3) { animation-delay: 200ms; }
+  &:nth-child(4) { animation-delay: 300ms; }
+  &:nth-child(5) { animation-delay: 400ms; }
+  &:nth-child(6) { animation-delay: 500ms; }
+}
+
+// Pulse Animation for Active Elements
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(0, 255, 136, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); }
+}
+
 // Responsive Design
 @media (max-width: 768px) {
   h1 { font-size: 2.5rem; }
@@ -281,11 +529,24 @@ a {
   
   .card {
     padding: var(--spacing-sm);
+    
+    &:hover {
+      transform: translateY(-3px) scale(1.01);
+    }
   }
   
   .btn {
     padding: var(--spacing-sm);
     font-size: 0.9rem;
+    
+    &:hover {
+      transform: translateY(-1px) scale(1.02) !important;
+    }
+  }
+  
+  // Reduce animation intensity on mobile
+  .scroll-animate {
+    transform: translateY(20px);
   }
 }
 
@@ -293,4 +554,10 @@ a {
   h1 { font-size: 2rem; }
   h2 { font-size: 1.75rem; }
   h3 { font-size: 1.5rem; }
+  
+  // Minimal animations on very small screens
+  .scroll-animate {
+    transform: translateY(10px);
+    transition-duration: 0.4s;
+  }
 }
