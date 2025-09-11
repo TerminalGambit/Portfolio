@@ -3,28 +3,28 @@
 
 // Modern Color Variables - Phase 1 Overhaul
 :root {
-  // Primary Background Colors
-  --bg-primary: #0A0F0C;           // Very dark green/near-black background
-  --bg-secondary: #111A15;         // Slightly lighter dark green
-  --bg-tertiary: #1A2B20;          // Card/component background
-  --bg-overlay: rgba(10, 15, 12, 0.9); // Overlay background
+  // Primary Background Colors (Blue Theme)
+  --bg-primary: #0A0C0F;           // Very dark blue/near-black background
+  --bg-secondary: #111518;         // Slightly lighter dark blue
+  --bg-tertiary: #1A1F2B;          // Card/component background
+  --bg-overlay: rgba(10, 12, 15, 0.9); // Overlay background
   
-  // Accent Colors - Enhanced hierarchy
-  --accent-bright: #00FF88;        // Bright green accent (CTAs only)
-  --accent-primary: #00CC6A;       // Primary bright green
-  --accent-secondary: #33FF99;     // Secondary bright green
-  --accent-hover: #00B85C;         // Hover state for accents
+  // Accent Colors - Enhanced hierarchy (Blue Theme)
+  --accent-bright: #0099FF;        // Bright blue accent (CTAs only)
+  --accent-primary: #0077CC;       // Primary bright blue
+  --accent-secondary: #3399FF;     // Secondary bright blue
+  --accent-hover: #0066BB;         // Hover state for accents
   
   // Muted variants for better hierarchy
-  --accent-muted: #88ffcc;         // Softer green for secondary elements
-  --accent-subtle: #66ffaa;        // Even softer for borders/backgrounds
-  --accent-tint: rgba(0, 255, 136, 0.1);  // Very light for overlays
+  --accent-muted: #66AAFF;         // Softer blue for secondary elements
+  --accent-subtle: #88BBFF;        // Even softer for borders/backgrounds
+  --accent-tint: rgba(0, 153, 255, 0.1);  // Very light for overlays
   
-  // Blue Accent Colors
-  --accent-blue: #00AAFF;          // Bright blue accent
-  --accent-blue-dark: #0088CC;     // Dark blue accent
-  --accent-blue-light: #33BBFF;    // Light blue accent
-  --accent-cyan: #00DDFF;          // Cyan accent
+  // Blue Accent Colors (Enhanced)
+  --accent-blue: #0099FF;          // Primary bright blue accent
+  --accent-blue-dark: #0066CC;     // Dark blue accent
+  --accent-blue-light: #33AAFF;    // Light blue accent
+  --accent-cyan: #00CCFF;          // Cyan accent
   
   // Complementary Colors
   --link-color: #4DFFB8;           // Links - softer bright green
@@ -338,10 +338,11 @@ a {
   transform: translateY(0) scale(1);
 }
 
-// Enhanced Card Hover Effects
+// Enhanced Card Hover Effects with Blue Theme
 .card {
   position: relative;
   overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   
   &::before {
     content: '';
@@ -350,8 +351,21 @@ a {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
-    transition: left 0.6s ease;
+    background: linear-gradient(90deg, transparent, rgba(0, 153, 255, 0.15), transparent);
+    transition: left 0.8s ease;
+    z-index: 1;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0, 153, 255, 0.05) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
     z-index: 1;
   }
   
@@ -359,10 +373,17 @@ a {
     left: 100%;
   }
   
+  &:hover::after {
+    opacity: 1;
+  }
+  
   &:hover {
     border-color: var(--border-accent);
-    box-shadow: var(--shadow-glow);
-    transform: translateY(-6px) scale(1.02);
+    box-shadow: 
+      var(--shadow-glow),
+      0 0 30px rgba(0, 153, 255, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transform: translateY(-8px) scale(1.03) rotateX(2deg);
   }
   
   // Content should be above the shine effect
@@ -519,6 +540,164 @@ a {
   0% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.4); }
   70% { box-shadow: 0 0 0 10px rgba(0, 255, 136, 0); }
   100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); }
+}
+
+// Enhanced Animation Styles
+
+// Typing Animation Cursor
+.typing-cursor {
+  display: inline-block;
+  background-color: var(--accent-bright);
+  margin-left: 3px;
+  width: 2px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+// Enhanced Button Ripple Effect
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, var(--accent-bright) 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 0.5s, opacity 1s;
+  }
+  
+  &:active::after {
+    transform: scale(0, 0);
+    opacity: 0.2;
+    transition: 0s;
+  }
+}
+
+// Floating Animation for Profile Image
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% { transform: translate(0, 0px); }
+  50% { transform: translate(0, -10px); }
+  100% { transform: translate(0, 0px); }
+}
+
+// Glowing Text Effect
+.glow-text {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px var(--accent-bright), 0 0 10px var(--accent-bright), 0 0 15px var(--accent-bright);
+  }
+  to {
+    text-shadow: 0 0 10px var(--accent-bright), 0 0 20px var(--accent-bright), 0 0 30px var(--accent-bright);
+  }
+}
+
+// Staggered Fade In for Lists
+.stagger-fade-in > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.stagger-fade-in > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-fade-in > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-fade-in > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-fade-in > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-fade-in > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-fade-in > *:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Smooth Parallax Background
+.parallax-bg {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+// Enhanced Focus States
+.focus-ring {
+  transition: all 0.2s ease;
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 153, 255, 0.5);
+    transform: scale(1.02);
+  }
+}
+
+// Magnetic Button Effect
+.magnetic-btn {
+  transition: transform 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Shimmering Loading Effect
+.shimmer {
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    rgba(255, 255, 255, 0.1) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+// Smooth Height Transitions
+.height-transition {
+  transition: height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+}
+
+// Enhanced Card Interactions
+.interactive-card {
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 153, 255, 0.2);
+  }
+  
+  &:active {
+    transform: translateY(-2px) scale(1.01);
+  }
 }
 
 // Responsive Design

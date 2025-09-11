@@ -144,6 +144,38 @@ mat-toolbar .mat-button:hover mat-icon {
   transform: scale(1.1);
 }
 
+// Special styling for demo button
+mat-toolbar .demo-btn {
+  background: linear-gradient(135deg, #8844ff, #00ccff) !important;
+  color: white !important;
+  border-radius: var(--border-radius);
+  margin-left: var(--spacing-xs);
+  font-weight: 600;
+  animation: sparkle 2s infinite;
+  
+  &:hover {
+    background: linear-gradient(135deg, #9955ff, #11ddff) !important;
+    color: white !important;
+    box-shadow: 0 0 20px rgba(136, 68, 255, 0.5);
+    transform: translateY(-2px) scale(1.05);
+  }
+  
+  mat-icon {
+    color: white !important;
+    animation: rotate 3s linear infinite;
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% { box-shadow: 0 0 5px rgba(136, 68, 255, 0.3); }
+  50% { box-shadow: 0 0 15px rgba(0, 204, 255, 0.5), 0 0 25px rgba(136, 68, 255, 0.3); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 // Special styling for resume download button
 mat-toolbar .resume-btn {
   background: var(--accent-bright) !important;

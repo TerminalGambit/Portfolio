@@ -1,0 +1,68 @@
+<div class="demo-container">
+  <!-- Particle System Container -->
+  <div #particleContainer class="particle-container"></div>
+
+  <!-- Control Panel -->
+  <div class="control-panel">
+    <mat-card class="control-card">
+      <mat-card-header>
+        <mat-card-title>🌟 Three.js Particle System Demo</mat-card-title>
+        <mat-card-subtitle>Interactive 3D Particles with WebGL</mat-card-subtitle>
+      </mat-card-header>
+      
+      <mat-card-content>
+        <div class="instructions">
+          <h3>Instructions:</h3>
+          <ul>
+            <li>🖱️ <strong>Move your mouse</strong> - Particles are attracted to your cursor</li>
+            <li>🖱️ <strong>Click anywhere</strong> - Creates particle burst effects</li>
+            <li>🎛️ <strong>Use controls below</strong> - Customize the particle system</li>
+          </ul>
+        </div>
+
+        <div class="controls">
+          <div class="control-group">
+            <label>Particle Count: {{particleCount}}</label>
+            <input type="range" 
+              min="100" 
+              max="2000" 
+              step="100" 
+              [value]="particleCount"
+              (input)="onParticleCountChange($event)"
+              class="slider">
+          </div>
+
+          <div class="control-group">
+            <label>Opacity: {{opacity.toFixed(1)}}</label>
+            <input type="range" 
+              min="0.1" 
+              max="1.0" 
+              step="0.1" 
+              [value]="opacity"
+              (input)="onOpacityChange($event)"
+              class="slider">
+          </div>
+
+          <div class="control-group">
+            <label>Animation:</label>
+            <button mat-raised-button (click)="togglePlayPause()" 
+                    [color]="isPlaying ? 'warn' : 'primary'">
+              {{isPlaying ? '⏸️ Pause' : '▶️ Play'}}
+            </button>
+          </div>
+
+          <div class="control-group">
+            <label>Colors:</label>
+            <div class="color-buttons">
+              <button mat-raised-button color="primary" (click)="changeColor('blue')">Blue</button>
+              <button mat-raised-button style="background: #00ff88" (click)="changeColor('green')">Green</button>
+              <button mat-raised-button style="background: #8844ff" (click)="changeColor('purple')">Purple</button>
+              <button mat-raised-button color="warn" (click)="changeColor('red')">Red</button>
+              <button mat-raised-button style="background: #ffaa00" (click)="changeColor('yellow')">Yellow</button>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

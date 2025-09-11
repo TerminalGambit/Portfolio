@@ -7,5 +7,6 @@ export const routes: Routes = [
   { path: 'projects', loadComponent: () => import('./components/projects/projects.component').then(m => m.ProjectsComponent) },
   { path: 'project/:id', loadComponent: () => import('./components/project-detail/project-detail.component').then(m => m.ProjectDetailComponent), data: { prerender: false } },
   { path: 'contact', loadComponent: () => import('./components/contact/contact.component').then(m => m.ContactComponent) },
+  { path: 'particles-demo', loadComponent: () => import('./components/particles-demo/particles-demo.component').then(m => m.ParticlesDemoComponent) },
   { path: '**', redirectTo: '' }
 ];

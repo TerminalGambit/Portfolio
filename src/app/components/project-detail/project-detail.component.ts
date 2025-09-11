@@ -175,4 +175,170 @@ export class ProjectDetailComponent implements OnInit {
 
     technologies: ['Python', 'XGBoost', 'TensorFlow', 'Pandas', 'FastF1 API', 'Scikit-learn', 'MLOps', 'NumPy', 'Matplotlib', 'Jupyter']
   };
+
+  // Blackjack Suite project data
+  blackjackSuiteProject = {
+    title: 'Blackjack Development Suite',
+    subtitle: 'Comprehensive Collection of Blackjack Projects: Implementation, Analysis & Education',
+    overview: 'The Blackjack Development Suite represents a comprehensive exploration of blackjack through multiple interconnected projects spanning game implementation, AI strategy analysis, Monte Carlo simulations, and mathematical modeling. This suite demonstrates the evolution from basic game mechanics to advanced statistical analysis and educational tools.',
+    vision: 'This suite showcases how a single domain (blackjack) can be explored through various technical lenses - from interactive game development to statistical modeling, AI strategy implementation, and educational content creation. Each project builds upon and complements the others, creating a comprehensive ecosystem for understanding both the technical and mathematical aspects of blackjack.',
+
+    projects: [
+      {
+        name: 'Advanced BlackJack Game - AI Educational Platform',
+        status: 'Featured Project',
+        description: 'The flagship interactive blackjack game with AI-powered strategy advisor, automated testing agents, and comprehensive analytics.',
+        technologies: ['JavaScript', 'Python', 'HTML5', 'CSS3', 'LaTeX'],
+        features: [
+          'AI Strategy Advisor with real-time optimal decision analysis',
+          'Automated testing agents with statistical validation',
+          'Professional LaTeX report generation',
+          'Real-time probability calculations and feedback',
+          'Modular architecture with 15+ enhancement phases'
+        ],
+        path: 'Currently featured in main portfolio',
+        github: null
+      },
+      {
+        name: 'BlackJackGame-Standalone',
+        status: 'Complete Implementation',
+        description: 'Standalone blackjack game implementation with comprehensive documentation, phased development approach, and detailed milestone tracking.',
+        technologies: ['JavaScript', 'HTML5', 'CSS3', 'Game Logic'],
+        features: [
+          'Complete game implementation with standard rules',
+          'Comprehensive phase-by-phase development documentation',
+          'Visual hierarchy and user interface design',
+          'Game state management and logic validation',
+          'Milestone-driven development approach'
+        ],
+        path: '/Users/jackmassey/Desktop/BlackJackGame-Standalone',
+        docs: ['PHASE1-COMPLETE.md', 'PHASE2-COMPLETE.md', 'PHASE3-COMPLETE.md', 'PHASE4-COMPLETE.md']
+      },
+      {
+        name: 'BlackJack-Simulations',
+        status: 'Simulation Engine',
+        description: 'Python-based simulation engine for blackjack strategy analysis, Monte Carlo testing, and statistical validation.',
+        technologies: ['Python', 'Statistical Analysis', 'Monte Carlo', 'Data Visualization'],
+        features: [
+          'Monte Carlo simulation capabilities',
+          'Strategy testing and validation frameworks',
+          'Statistical analysis and reporting tools',
+          'Performance optimization and debugging',
+          'Comprehensive testing suites'
+        ],
+        path: '/Users/jackmassey/Desktop/BlackJack-Simulations',
+        docs: ['PROJECT_SPECIFICATION.md', 'IMPLEMENTATION_PLAN.md', 'PROGRESS_REPORT.md']
+      },
+      {
+        name: 'Blackjack Martingale Analysis',
+        status: 'Research Project',
+        description: 'Mathematical analysis of the Martingale betting system applied to blackjack, including iOS trainer application.',
+        technologies: ['Statistical Analysis', 'Swift', 'iOS Development', 'Mathematical Modeling'],
+        features: [
+          'Comprehensive Martingale system analysis',
+          'Risk assessment and probability calculations',
+          'iOS training application for strategy practice',
+          'Mathematical modeling of betting systems',
+          'Educational content and documentation'
+        ],
+        path: '/Users/jackmassey/Desktop/blackjack-martingale-analysis',
+        github: 'https://github.com/TerminalGambit/blackjack-martingale-analysis'
+      }
+    ],
+
+    technicalAchievements: [
+      {
+        title: '🎯 Comprehensive Game Implementation',
+        description: 'From basic game mechanics to advanced AI integration',
+        items: [
+          'Multiple complete game implementations with varying complexity levels',
+          'Progressive enhancement from simple rules to AI-powered strategy advice',
+          'Consistent game logic validation across different implementations',
+          'Modular architecture supporting different use cases and audiences'
+        ]
+      },
+      {
+        title: '🔬 Advanced Statistical Analysis',
+        description: 'Mathematical modeling and simulation capabilities',
+        items: [
+          'Monte Carlo simulation engine for strategy validation',
+          'Statistical analysis of betting systems and their effectiveness',
+          'Probability calculations and risk assessment tools',
+          'Comprehensive testing frameworks with automated validation'
+        ]
+      },
+      {
+        title: '🎓 Educational Integration',
+        description: 'Learning tools and comprehensive documentation',
+        items: [
+          'AI strategy advisor that teaches optimal decision-making',
+          'Professional LaTeX report generation for analysis documentation',
+          'Cross-platform educational tools including iOS applications',
+          'Progressive learning approach from basic rules to advanced strategy'
+        ]
+      },
+      {
+        title: '📱 Cross-Platform Reach',
+        description: 'Web, desktop, and mobile implementations',
+        items: [
+          'Web-based interactive games with modern JavaScript',
+          'Python-based simulation and analysis tools',
+          'iOS application for mobile learning and practice',
+          'LaTeX integration for professional documentation'
+        ]
+      }
+    ],
+
+    learningsFromSuite: [
+      {
+        category: 'Project Architecture',
+        insights: [
+          'How to design interconnected projects that complement each other',
+          'The value of modular development allowing for specialized components',
+          'Building comprehensive ecosystems rather than isolated applications',
+          'Progressive complexity management across related projects'
+        ]
+      },
+      {
+        category: 'Mathematical Integration',
+        insights: [
+          'Translating complex mathematical concepts into interactive experiences',
+          'Building tools that make statistical analysis accessible and engaging',
+          'The importance of validation and testing in mathematical modeling',
+          'How gaming can make mathematical concepts more approachable'
+        ]
+      },
+      {
+        category: 'AI and Strategy',
+        insights: [
+          'Implementing AI advisors that teach rather than just perform',
+          'Building systems that explain their decision-making processes',
+          'The challenge of creating AI that enhances human learning',
+          'Balancing automation with educational value'
+        ]
+      },
+      {
+        category: 'Documentation & Process',
+        insights: [
+          'The critical importance of comprehensive documentation in complex projects',
+          'How phase-driven development helps manage complexity',
+          'Building projects that can serve both entertainment and education',
+          'The value of creating multiple entry points for different skill levels'
+        ]
+      }
+    ],
+
+    impact: 'The Blackjack Development Suite demonstrates how a focused domain can be explored through multiple technical approaches, creating a rich ecosystem of interconnected tools and learning resources. This suite shows the evolution from simple game implementation to sophisticated AI integration, statistical analysis, and educational tool development.',
+
+    technologies: ['JavaScript', 'Python', 'HTML5', 'CSS3', 'LaTeX', 'Statistical Analysis', 'Game Theory', 'AI Strategy', 'iOS Development', 'Monte Carlo Simulation'],
+
+    metrics: {
+      totalProjects: '4 interconnected projects',
+      implementations: '3+ game implementations',
+      platforms: 'Web, Desktop, iOS',
+      analysisTools: 'Monte Carlo simulations',
+      documentation: '15+ comprehensive docs',
+      aiFeatures: 'Strategy advisor & testing'
+    }
+  };
 }

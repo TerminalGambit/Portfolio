@@ -3,12 +3,13 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background: linear-gradient(180deg, var(--bg-overlay), rgba(10, 15, 12, 0.7)), url('/assets/images/home-bg.png') no-repeat center;
-  background-size: cover;
+  background: rgba(10, 15, 12, 0.3); // Make background more transparent to see particles
   padding: var(--spacing-xxl) var(--spacing-md);
   text-align: center;
   font-family: 'Inter', sans-serif;
   color: var(--text-primary);
+  position: relative;
+  z-index: 2; // Above particles
 }
 
 .hero-card {

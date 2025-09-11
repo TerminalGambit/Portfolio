@@ -230,8 +230,181 @@
   </div>
 </section>
 
+<!-- Blackjack Suite Detail Page -->
+<section class="project-detail-container mat-typography" *ngIf="projectId === 'blackjack-suite'">
+  <div class="project-detail-content">
+    <!-- Header Section -->
+    <div class="project-header">
+      <button mat-icon-button (click)="goBack()" class="back-button">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <div class="header-content">
+        <h1 class="project-title">{{ blackjackSuiteProject.title }}</h1>
+        <p class="project-subtitle">{{ blackjackSuiteProject.subtitle }}</p>
+        <div class="header-actions">
+          <mat-chip class="status-chip" color="primary" selected>Project Suite</mat-chip>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overview Section -->
+    <mat-card class="overview-card">
+      <mat-card-header>
+        <mat-card-title>🎯 Suite Overview</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="overview-text">{{ blackjackSuiteProject.overview }}</p>
+        <div class="vision-section">
+          <h3>Vision & Philosophy</h3>
+          <p>{{ blackjackSuiteProject.vision }}</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Suite Metrics -->
+    <div class="metrics-showcase">
+      <h2>📊 Suite Metrics</h2>
+      <div class="metrics-grid-detail">
+        <div class="metric-card">
+          <div class="metric-value">{{ blackjackSuiteProject.metrics.totalProjects }}</div>
+          <div class="metric-label">Total Projects</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">{{ blackjackSuiteProject.metrics.implementations }}</div>
+          <div class="metric-label">Implementations</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">{{ blackjackSuiteProject.metrics.platforms }}</div>
+          <div class="metric-label">Platforms</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">{{ blackjackSuiteProject.metrics.analysisTools }}</div>
+          <div class="metric-label">Analysis Tools</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">{{ blackjackSuiteProject.metrics.documentation }}</div>
+          <div class="metric-label">Documentation</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">{{ blackjackSuiteProject.metrics.aiFeatures }}</div>
+          <div class="metric-label">AI Features</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Individual Projects Section -->
+    <div class="suite-projects-section">
+      <h2>🃏 Individual Projects in Suite</h2>
+      <div class="suite-projects-grid">
+        <mat-card class="suite-project-card" *ngFor="let project of blackjackSuiteProject.projects">
+          <mat-card-header>
+            <mat-card-title>{{ project.name }}</mat-card-title>
+            <mat-card-subtitle>{{ project.status }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="project-features">
+              <h4>Key Features:</h4>
+              <ul>
+                <li *ngFor="let feature of project.features">{{ feature }}</li>
+              </ul>
+            </div>
+            <div class="project-tech">
+              <h4>Technologies:</h4>
+              <div class="tech-chips-small">
+                <mat-chip *ngFor="let tech of project.technologies" class="tech-chip-small">
+                  {{ tech }}
+                </mat-chip>
+              </div>
+            </div>
+            <div class="project-path" *ngIf="project.path">
+              <strong>Location:</strong> <code>{{ project.path }}</code>
+            </div>
+            <div class="project-github" *ngIf="project.github">
+              <button mat-button color="primary" (click)="openLink(project.github)">
+                <mat-icon>open_in_new</mat-icon>
+                View on GitHub
+              </button>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+    <!-- Technical Achievements Section -->
+    <div class="achievements-section">
+      <h2>🏆 Technical Achievements</h2>
+      <div class="achievements-grid">
+        <mat-card class="achievement-card" *ngFor="let achievement of blackjackSuiteProject.technicalAchievements">
+          <mat-card-header>
+            <mat-card-title [innerHTML]="achievement.title"></mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p *ngIf="achievement.description" class="achievement-description">{{ achievement.description }}</p>
+            <ul>
+              <li *ngFor="let item of achievement.items">{{ item }}</li>
+            </ul>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+    <!-- Key Learnings Section -->
+    <div class="learnings-section">
+      <h2>🎓 Key Learnings from Suite Development</h2>
+      <div class="learnings-grid">
+        <mat-card class="learning-card" *ngFor="let learning of blackjackSuiteProject.learningsFromSuite">
+          <mat-card-header>
+            <mat-card-title>{{ learning.category }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <ul>
+              <li *ngFor="let insight of learning.insights">{{ insight }}</li>
+            </ul>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+    <!-- Technologies Used Section -->
+    <mat-card class="technologies-card">
+      <mat-card-header>
+        <mat-card-title>🛠️ Technologies Across Suite</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="tech-chips-detailed">
+          <mat-chip *ngFor="let tech of blackjackSuiteProject.technologies" class="tech-chip-detailed">
+            {{ tech }}
+          </mat-chip>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Impact Section -->
+    <mat-card class="impact-card">
+      <mat-card-header>
+        <mat-card-title>🎯 Suite Impact & Innovation</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="impact-text">{{ blackjackSuiteProject.impact }}</p>
+        <div class="final-statement">
+          <p><strong>The Blackjack Development Suite exemplifies how focused domain exploration can yield rich, interconnected learning experiences that span multiple technical disciplines and create comprehensive educational resources.</strong></p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Back to Projects Button -->
+    <div class="navigation-footer">
+      <button mat-raised-button color="primary" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon>
+        Back to Projects
+      </button>
+    </div>
+  </div>
+</section>
+
 <!-- Fallback for other project IDs -->
-<section class="project-detail-container mat-typography" *ngIf="projectId !== 'apexagent'">
+<section class="project-detail-container mat-typography" *ngIf="projectId !== 'apexagent' && projectId !== 'blackjack-suite'">
   <div class="project-detail-content">
     <div class="project-header">
       <button mat-icon-button (click)="goBack()" class="back-button">
