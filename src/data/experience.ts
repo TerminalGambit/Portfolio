@@ -44,6 +44,15 @@ export const education: Education[] = [
 
 export const experience: Experience[] = [
   {
+    role: "Business Data Consultant",
+    company: "Albert School BDD Program",
+    location: "Paris",
+    period: "2025–2026",
+    description:
+      "Led 5 real-world business consulting projects with major companies: built a CHF 316M luxury asset intelligence system (JEMA), optimized climate risk for 955K insurance policies (Generali France), identified €60.7M revenue opportunity (Valrhona), evaluated crypto product viability (SwissBorg), and designed HNW lead scoring (CA-Indosuez).",
+    technologies: ["Python", "CVXPY", "NetworkX", "spaCy", "Streamlit", "Plotly", "FastAPI"],
+  },
+  {
     role: "Summer Research Intern",
     company: "i3S Laboratory",
     location: "Sophia Antipolis",
