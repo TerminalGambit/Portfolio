@@ -30,6 +30,8 @@ export const skillCategories: SkillCategory[] = [
       { name: "XGBoost", level: "Intermediate" },
       { name: "PyTorch", level: "Intermediate" },
       { name: "NumPy", level: "Intermediate" },
+      { name: "spaCy", level: "Intermediate" },
+      { name: "NetworkX", level: "Intermediate" },
     ],
   },
   {
@@ -50,6 +52,8 @@ export const skillCategories: SkillCategory[] = [
       { name: "Risk Management", level: "Intermediate" },
       { name: "Market Analysis", level: "Intermediate" },
       { name: "Algorithmic Trading", level: "Beginner" },
+      { name: "Linear Programming", level: "Intermediate" },
+      { name: "Business Intelligence", level: "Advanced" },
     ],
   },
   {
@@ -60,6 +64,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "Linux", level: "Intermediate" },
       { name: "GCP", level: "Intermediate" },
       { name: "VS Code", level: "Advanced" },
+      { name: "Streamlit", level: "Advanced" },
     ],
   },
   {
@@ -69,6 +74,15 @@ export const skillCategories: SkillCategory[] = [
       { name: "Plotly", level: "Intermediate" },
       { name: "Seaborn", level: "Intermediate" },
       { name: "D3.js", level: "Beginner" },
+    ],
+  },
+  {
+    name: "Optimization & NLP",
+    skills: [
+      { name: "CVXPY", level: "Intermediate" },
+      { name: "H3 Geospatial", level: "Intermediate" },
+      { name: "HDBSCAN", level: "Intermediate" },
+      { name: "Sentence Transformers", level: "Intermediate" },
     ],
   },
 ];
