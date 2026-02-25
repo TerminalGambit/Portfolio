@@ -33,7 +33,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.15, ease }}
         >
-          Computer Scientist &middot; Machine Learning Engineer
+          ML Engineer &middot; Data &amp; Finance Consultant
         </motion.p>
         <motion.p
           className="mx-auto mb-10 max-w-xl text-muted-foreground"
@@ -41,9 +41,10 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.25, ease }}
         >
-          Machine learning engineer specializing in AI-driven finance and
-          quantitative systems — designing intelligent systems that reason,
-          decide, and adapt.
+          Machine learning engineer and data consultant building AI-driven
+          systems for finance and business intelligence — from predictive
+          models to real-world consulting with companies like Generali,
+          Valrhona, and JEMA.
         </motion.p>
         <motion.div
           className="flex flex-wrap justify-center gap-3 sm:gap-4"

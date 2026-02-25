@@ -19,10 +19,10 @@ export function About() {
               About
             </h2>
             <p className="mb-8 max-w-2xl text-muted-foreground">
-              Computer science graduate starting an MSc in Data and Finance at Albert
-              School &times; Mines Paris PSL. I build AI systems for quantitative finance,
-              with experience across machine learning, full-stack development, and
-              research.
+              Computer science graduate pursuing an MSc in Data and Finance at Albert
+              School &times; Mines Paris PSL. I build AI systems for quantitative finance
+              and deliver data-driven consulting for companies like Generali France,
+              Valrhona, JEMA, and SwissBorg.
             </p>
           </FadeIn>
 
@@ -51,8 +51,8 @@ export function About() {
                 {[
                   "End-to-end ML pipelines — data to deployment",
                   "Quantitative finance modeling & market analysis",
+                  "Business intelligence & data consulting",
                   "Full-stack application architecture",
-                  "Research-grade experimentation & validation",
                 ].map((item) => (
                   <li
                     key={item}
