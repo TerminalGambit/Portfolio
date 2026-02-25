@@ -29,7 +29,7 @@ const socialLinks = [
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/jack-massey",
+    href: "https://linkedin.com/in/masseyjack",
     description: "Professional network and career updates",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
