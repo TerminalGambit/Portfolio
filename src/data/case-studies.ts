@@ -25,18 +25,18 @@ export const caseStudies: CaseStudy[] = [
     period: "2025\u20132026",
     status: "Production Ready",
     summary:
-      "Graph-based news impact monitoring for luxury asset portfolios. Built knowledge graph (320 nodes, 800 edges) linking 128 high-value assets (CHF 316M) to real-time market events.",
+      "Graph-based news impact monitoring for luxury asset portfolios. Built knowledge graph linking 100+ high-value assets (CHF 300M+) to real-time market events.",
     problem:
       "Luxury asset collectors need to know when market news impacts their diversified portfolios \u2014 but impact is rarely direct.",
     approach:
       "Knowledge graph with weighted BFS propagation (up to 3 hops with decay), sentence-transformer embeddings (all-MiniLM-L6-v2), scoring formula: (graph_propagation \u00d7 0.7) + (embedding_similarity \u00d7 0.3) \u00d7 sentiment_multiplier.",
     impact: [
-      "Validated CHF 17.2M in asset values",
+      "Validated millions in asset values through automated market comparisons",
       "Graph enables indirect impact detection across asset categories",
       "Production MVP with mobile apps + Streamlit + FastAPI",
     ],
     metrics: {
-      "Portfolio Value": "CHF 316M",
+      "Portfolio Value": "CHF 300M+",
       "Graph Nodes": "320+",
       "Asset Categories": "10",
       "Data Sources": "36 curated",
@@ -80,22 +80,22 @@ export const caseStudies: CaseStudy[] = [
     period: "2025\u20132026",
     status: "Complete",
     summary:
-      "Redistributed ~955,000 insurance policies across 2,533 H3 hexagonal zones over 10 years using LP. Reduced risk by 6.8% while achieving 62.9% growth.",
+      "Redistributed ~1M insurance policies across 2,500+ H3 hexagonal zones over 10 years using LP. Reduced risk by ~7% while achieving ~63% growth.",
     problem:
-      "Redistribute ~955K policies across 2,533 H3 hexagonal grid zones over 10 years to minimize climate risk while maintaining 5% annual growth.",
+      "Redistribute ~1M policies across 2,500+ H3 hexagonal grid zones over 10 years to minimize climate risk while maintaining 5% annual growth.",
     approach:
-      "Multi-period LP with CVXPY (27,863 variables). Composite Risk Index: loss per policy (50%), claim frequency (25%), hazard diversity (15%), temporal concentration (10%).",
+      "Multi-period LP with CVXPY (~28K variables). Composite Risk Index: loss per policy (50%), claim frequency (25%), hazard diversity (15%), temporal concentration (10%).",
     impact: [
-      "Reduced risk by 6.8%",
-      "Grew portfolio 62.9%",
+      "Reduced risk by ~7%",
+      "Grew portfolio ~63%",
       "Hit 5% annual growth target precisely",
       "All constraints satisfied",
     ],
     metrics: {
-      "Policies Optimized": "955K",
-      "Risk Reduction": "-6.8%",
-      "Portfolio Growth": "+62.9%",
-      "Spatial Zones": "2,533",
+      "Policies Optimized": "~1M",
+      "Risk Reduction": "~7%",
+      "Portfolio Growth": "~63%",
+      "Spatial Zones": "2,500+",
     },
     technologies: [
       "Python",
@@ -133,23 +133,23 @@ export const caseStudies: CaseStudy[] = [
     period: "2025",
     status: "Complete",
     summary:
-      "Analyzed sales across 3 BUs using PVM decomposition and ML anomaly detection. Identified \u20AC60.7M revenue opportunity with 21x ROI.",
+      "Analyzed sales across 3 BUs using PVM decomposition and ML anomaly detection. Identified €60M+ revenue opportunity with 20x+ ROI.",
     problem:
-      "Analyze sales performance across France, Italy, Spain to identify underperformance across 33,610 customers and 2.98M transactions.",
+      "Analyze sales performance across France, Italy, Spain to identify underperformance across 30,000+ customers and ~3M transactions.",
     approach:
       "Price-Volume-Mix decomposition, ML anomaly detection (isolation forests), customer cohort analysis, category recurrence analysis.",
     impact: [
-      "Identified \u20AC60.7M revenue opportunity",
-      "Discovered volume drives 60% of gap",
-      "Proved Italy compensates 59% volume loss with pricing (unsustainable)",
+      "Identified €60M+ revenue opportunity",
+      "Discovered volume drives majority of the performance gap",
+      "Proved one market compensates volume loss with pricing power (unsustainable)",
       "Spain double hit identified",
       "21x ROI projection",
     ],
     metrics: {
-      "Revenue Opportunity": "\u20AC60.7M",
-      "Projected ROI": "21x",
-      "Customers Analyzed": "33,610",
-      Transactions: "2.98M",
+      "Revenue Opportunity": "€60M+",
+      "Projected ROI": "20x+",
+      "Customers Analyzed": "30,000+",
+      Transactions: "~3M",
     },
     technologies: [
       "Python",
@@ -186,23 +186,23 @@ export const caseStudies: CaseStudy[] = [
     period: "2025",
     status: "Complete",
     summary:
-      "Evaluated viability of Borrow-to-Trade product for 11,192 EARN users. Modeled LTV scenarios and quantified revenue/risk.",
+      "Evaluated viability of Borrow-to-Trade product for 11,000+ EARN users. Modeled LTV scenarios and quantified revenue/risk.",
     problem:
       "Evaluate whether Borrow-to-Trade is viable for EARN users.",
     approach:
       "User segmentation, LTV scenario modeling (30-50%), sensitivity analyses, AUM impact, regulatory risk.",
     impact: [
-      "68.5% active traders identified",
-      "3,031 projected adopters (27%)",
+      "~70% active traders identified",
+      "~3,000 projected adopters (~25-30%)",
       "30% LTV safe threshold established",
-      "CHF 723/user revenue modeled",
+      "~CHF 700/user revenue modeled",
       "Verdict: potentially viable but HIGH RISK",
     ],
     metrics: {
-      "Users Analyzed": "11,192",
-      "Expected Adoption": "27%",
+      "Users Analyzed": "11,000+",
+      "Expected Adoption": "~25-30%",
       "Safe LTV": "30%",
-      "Revenue/User": "CHF 723",
+      "Revenue/User": "~CHF 700",
     },
     technologies: [
       "Python",
@@ -244,14 +244,14 @@ export const caseStudies: CaseStudy[] = [
       "4-component pipeline: PDF extraction, regex parsing, multi-factor scoring (wealth 40%, contact 25%, professional 20%, activity 15%), SQLite storage.",
     impact: [
       "Automated bulk PDF processing",
-      "4-tier classification (A: CHF 5M+)",
+      "4-tier classification by wealth indicators",
       "Configurable scoring weights",
       "Complete audit trail",
     ],
     metrics: {
       "Scoring Factors": "4",
       "Priority Tiers": "A/B/C/D",
-      "Wealth Threshold (A)": "CHF 5M+",
+      "Wealth Threshold (A)": "Multi-million CHF",
     },
     technologies: [
       "Python",
