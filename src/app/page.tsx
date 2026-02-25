@@ -1,5 +1,6 @@
 import { Hero } from "@/components/sections/hero";
 import { HomeProjectsTeaser } from "@/components/sections/home-projects-teaser";
+import { HomeCaseStudiesTeaser } from "@/components/sections/home-case-studies-teaser";
 import { HomeAboutTeaser } from "@/components/sections/home-about-teaser";
 import { HomeDashboardTeaser } from "@/components/sections/home-dashboard-teaser";
 
@@ -8,6 +9,7 @@ export default function Home() {
     <>
       <Hero />
       <HomeProjectsTeaser />
+      <HomeCaseStudiesTeaser />
       <HomeDashboardTeaser />
       <HomeAboutTeaser />
     </>
